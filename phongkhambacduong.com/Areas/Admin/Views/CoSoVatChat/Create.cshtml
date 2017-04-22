@@ -1,0 +1,60 @@
+﻿@model WCF.BussinessObject.EntityObject.CoSoVatChatObject
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+<section class="content">
+    <div class="box">
+        @using (Html.BeginForm("Create", "CoSoVatChat", FormMethod.Post, new { encType = "multipart/form-data" }))
+        {
+            <div class="box-header">
+                <h2>Thêm mới <b>Cơ sở vật chất</b></h2>
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true)
+            </div>
+            <div class="box-body">
+
+                <div class="form-group container-fluid">
+                    <label class="control-label" for="inputWarning">
+                        <i class="fa fa-bell-o"></i> @Html.DisplayNameFor(d => d.Index)
+                    </label>
+                    @Html.TextBoxFor(d => d.Index, new { @class = "form-control", placeholder = "Enter ...", type = "number" })
+                    @Html.ValidationMessageFor(d => d.Index, "", new { @class = "alert-danger" })
+                </div>
+
+                <div class="form-group container-fluid">
+                    <label class="control-label" for="inputWarning">
+                        <i class="fa fa-bell-o"></i> @Html.DisplayNameFor(d => d.hrefAjax)
+                    </label>
+                    @Html.TextBoxFor(d => d.hrefAjax, new { @class = "form-control", placeholder = "Enter ..." })
+                    @Html.ValidationMessageFor(d => d.hrefAjax, "", new { @class = "alert-danger" })
+                </div>
+
+
+                <div class="form-group container-fluid">
+                    <label class="control-label" for="inputWarning">
+                        <i class="fa fa-bell-o"></i> @Html.DisplayNameFor(d => d.GioiThieu)
+                    </label>
+                    @Html.TextAreaFor(d => d.GioiThieu, new { @class = "form-control", placeholder = "Enter ..." })
+                    @Html.ValidationMessageFor(d => d.GioiThieu, "", new { @class = "alert-danger" })
+
+                </div>
+                <div class="form-group container-fluid">
+                    <label class="control-label" for="inputWarning">
+                        <i class="fa fa-bell-o"></i> @Html.DisplayNameFor(d => d.LinkImage)
+                    </label>
+                    <input type="file" name="LinkImage" value=" " />
+                    @Html.ValidationMessageFor(d => d.LinkImage, "", new { @class = "alert-danger" })
+                </div>
+
+                <div class="form-group">
+                    <div class="">
+                        <input type="submit" value="Create" class="btn btn-success" />
+                        @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary" })
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</section>

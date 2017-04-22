@@ -1,0 +1,1238 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="phongkhambacduong.comModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+        <Function Name="SP_Account_DELETE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Username" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="SP_Account_GetAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="SP_Account_GetByUsername" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Username" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="SP_Account_INSERT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Username" Type="nvarchar" Mode="In" />
+          <Parameter Name="Password" Type="nvarchar" Mode="In" />
+          <Parameter Name="Email" Type="nvarchar" Mode="In" />
+          <Parameter Name="Sex" Type="bit" Mode="In" />
+          <Parameter Name="Name" Type="nvarchar" Mode="In" />
+          <Parameter Name="Birthday" Type="date" Mode="In" />
+          <Parameter Name="Adress" Type="nvarchar" Mode="In" />
+          <Parameter Name="Phone" Type="nchar" Mode="In" />
+          <Parameter Name="ID_Position" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="Avatar" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="SP_Account_UPDATE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Username" Type="nvarchar" Mode="In" />
+          <Parameter Name="Password" Type="nvarchar" Mode="In" />
+          <Parameter Name="Email" Type="nvarchar" Mode="In" />
+          <Parameter Name="Sex" Type="bit" Mode="In" />
+          <Parameter Name="Name" Type="nvarchar" Mode="In" />
+          <Parameter Name="Birthday" Type="date" Mode="In" />
+          <Parameter Name="Adress" Type="nvarchar" Mode="In" />
+          <Parameter Name="Phone" Type="nchar" Mode="In" />
+          <Parameter Name="ID_Position" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="Avatar" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="SP_BacSi_DELETE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID" Type="uniqueidentifier" Mode="In" />
+        </Function>
+        <Function Name="SP_BacSi_GetAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="SP_BacSi_GetByID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID" Type="uniqueidentifier" Mode="In" />
+        </Function>
+        <Function Name="SP_BacSi_INSERT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="Name" Type="nvarchar" Mode="In" />
+          <Parameter Name="ID_PhongBan" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="LinkImage" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="SP_BacSi_UPDATE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="Name" Type="nvarchar" Mode="In" />
+          <Parameter Name="ID_PhongBan" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="LinkImage" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="SP_CoSoVatChat_DELETE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID" Type="uniqueidentifier" Mode="In" />
+        </Function>
+        <Function Name="SP_CoSoVatChat_GetAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="SP_CoSoVatChat_GetByID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID" Type="uniqueidentifier" Mode="In" />
+        </Function>
+        <Function Name="SP_CoSoVatChat_INSERT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="GioiThieu" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="LinkImage" Type="nvarchar" Mode="In" />
+          <Parameter Name="Index" Type="int" Mode="In" />
+          <Parameter Name="hrefAjax" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="SP_CoSoVatChat_UPDATE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="GioiThieu" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="LinkImage" Type="nvarchar" Mode="In" />
+          <Parameter Name="Index" Type="int" Mode="In" />
+          <Parameter Name="hrefAjax" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="SP_CTCoSoVatChat_DELETE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID" Type="uniqueidentifier" Mode="In" />
+        </Function>
+        <Function Name="SP_CTCoSoVatChat_DELETEForID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID_CoSoVatChat" Type="uniqueidentifier" Mode="In" />
+        </Function>
+        <Function Name="SP_CTCoSoVatChat_GetAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="SP_CTCoSoVatChat_GetByID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID" Type="uniqueidentifier" Mode="In" />
+        </Function>
+        <Function Name="SP_CTCoSoVatChat_GetGroupByID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID_CoSoVatChat" Type="uniqueidentifier" Mode="In" />
+        </Function>
+        <Function Name="SP_CTCoSoVatChat_INSERT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="ID_CoSoVatChat" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="LinkImage" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="NoiDung" Type="nvarchar(max)" Mode="In" />
+        </Function>
+        <Function Name="SP_CTCoSoVatChat_UPDATE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="ID_CoSoVatChat" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="LinkImage" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="NoiDung" Type="nvarchar(max)" Mode="In" />
+        </Function>
+        <Function Name="SP_DiaChi_DELETE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID" Type="uniqueidentifier" Mode="In" />
+        </Function>
+        <Function Name="SP_DiaChi_GetAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="SP_DiaChi_GetByID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID" Type="uniqueidentifier" Mode="In" />
+        </Function>
+        <Function Name="SP_DiaChi_INSERT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="Mobile" Type="nvarchar" Mode="In" />
+          <Parameter Name="Adress" Type="nvarchar" Mode="In" />
+          <Parameter Name="Hotline" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="SP_DiaChi_UPDATE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="Mobile" Type="nvarchar" Mode="In" />
+          <Parameter Name="Adress" Type="nvarchar" Mode="In" />
+          <Parameter Name="Hotline" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="SP_DichVu_DELETE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID" Type="uniqueidentifier" Mode="In" />
+        </Function>
+        <Function Name="SP_DichVu_GetAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="SP_DichVu_GetByID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID" Type="uniqueidentifier" Mode="In" />
+        </Function>
+        <Function Name="SP_DichVu_INSERT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="Icon" Type="nvarchar" Mode="In" />
+          <Parameter Name="Name" Type="nvarchar" Mode="In" />
+          <Parameter Name="GioiThieu" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="hrefAjax" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="SP_DichVu_UPDATE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="Icon" Type="nvarchar" Mode="In" />
+          <Parameter Name="Name" Type="nvarchar" Mode="In" />
+          <Parameter Name="GioiThieu" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="hrefAjax" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="SP_GopY_DELETE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID" Type="uniqueidentifier" Mode="In" />
+        </Function>
+        <Function Name="SP_GopY_GetAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="SP_GopY_GetByID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID" Type="uniqueidentifier" Mode="In" />
+        </Function>
+        <Function Name="SP_GopY_INSERT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="ThoiGian" Type="date" Mode="In" />
+          <Parameter Name="HoTen" Type="nvarchar" Mode="In" />
+          <Parameter Name="DienThoai" Type="nvarchar" Mode="In" />
+          <Parameter Name="Email" Type="nvarchar" Mode="In" />
+          <Parameter Name="NoiDung" Type="nvarchar(max)" Mode="In" />
+        </Function>
+        <Function Name="SP_GopY_UPDATE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="ThoiGian" Type="date" Mode="In" />
+          <Parameter Name="HoTen" Type="nvarchar" Mode="In" />
+          <Parameter Name="DienThoai" Type="nvarchar" Mode="In" />
+          <Parameter Name="Email" Type="nvarchar" Mode="In" />
+          <Parameter Name="NoiDung" Type="nvarchar(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="SP_Menu_DELETE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID" Type="uniqueidentifier" Mode="In" />
+        </Function>
+        <Function Name="SP_Menu_GetAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="SP_Menu_GetByID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID" Type="uniqueidentifier" Mode="In" />
+        </Function>
+        <Function Name="SP_Menu_INSERT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="Display" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="Rank" Type="int" Mode="In" />
+          <Parameter Name="Neo" Type="nvarchar(max)" Mode="In" />
+        </Function>
+        <Function Name="SP_Menu_UPDATE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="Display" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="Rank" Type="int" Mode="In" />
+          <Parameter Name="Neo" Type="nvarchar(max)" Mode="In" />
+        </Function>
+        <Function Name="SP_PhongBan_DELETE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID" Type="uniqueidentifier" Mode="In" />
+        </Function>
+        <Function Name="SP_PhongBan_GetAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="SP_PhongBan_GetByID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID" Type="uniqueidentifier" Mode="In" />
+        </Function>
+        <Function Name="SP_PhongBan_INSERT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="Name" Type="nvarchar" Mode="In" />
+          <Parameter Name="MoTa" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="SP_PhongBan_UPDATE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="Name" Type="nvarchar" Mode="In" />
+          <Parameter Name="MoTa" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="SP_Position_DELETE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID" Type="uniqueidentifier" Mode="In" />
+        </Function>
+        <Function Name="SP_Position_GetAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="SP_Position_GetByID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID" Type="uniqueidentifier" Mode="In" />
+        </Function>
+        <Function Name="SP_Position_INSERT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="Name" Type="nvarchar" Mode="In" />
+          <Parameter Name="MieuTa" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="SP_Position_UPDATE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="Name" Type="nvarchar" Mode="In" />
+          <Parameter Name="MieuTa" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="SP_SanPham_DELETE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID" Type="uniqueidentifier" Mode="In" />
+        </Function>
+        <Function Name="SP_SanPham_GetAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="SP_SanPham_GetByID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID" Type="uniqueidentifier" Mode="In" />
+        </Function>
+        <Function Name="SP_SanPham_INSERT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="LinkImage" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="Name" Type="nvarchar" Mode="In" />
+          <Parameter Name="GiaTien" Type="int" Mode="In" />
+          <Parameter Name="Rank" Type="int" Mode="In" />
+          <Parameter Name="ThongTin" Type="nvarchar(max)" Mode="In" />
+        </Function>
+        <Function Name="SP_SanPham_UPDATE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="LinkImage" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="Name" Type="nvarchar" Mode="In" />
+          <Parameter Name="GiaTien" Type="int" Mode="In" />
+          <Parameter Name="Rank" Type="int" Mode="In" />
+          <Parameter Name="ThongTin" Type="nvarchar(max)" Mode="In" />
+        </Function>
+        <Function Name="SP_Slogan_DELETE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID" Type="uniqueidentifier" Mode="In" />
+        </Function>
+        <Function Name="SP_Slogan_GetAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="SP_Slogan_GetByID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID" Type="uniqueidentifier" Mode="In" />
+        </Function>
+        <Function Name="SP_Slogan_INSERT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="DichVu" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="Slogan_DichVu" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="VeChungToi" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="Slogan_VeChungToi" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="nameContent_VeChungToi" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="Content_VeChungToi" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="CSVC" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="Slogan_CSVC" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="BacSi" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="Slogan_BacSi" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="LienHe" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="Slogan_Lienhe" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="GioiThieu" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="ImageGioiThieu" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="ImagePage" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="SloganPage" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="LogoPage" Type="nvarchar(max)" Mode="In" />
+        </Function>
+        <Function Name="SP_Slogan_UPDATE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="DichVu" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="Slogan_DichVu" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="VeChungToi" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="Slogan_VeChungToi" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="nameContent_VeChungToi" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="Content_VeChungToi" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="CSVC" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="Slogan_CSVC" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="BacSi" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="Slogan_BacSi" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="LienHe" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="Slogan_Lienhe" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="GioiThieu" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="ImageGioiThieu" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="ImagePage" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="SloganPage" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="LogoPage" Type="nvarchar(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <EntityContainer Name="phongkhambacduongcomModelStoreContainer" />
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="phongkhambacduong.comModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="PhongKhamEntities" annotation:LazyLoadingEnabled="true" >
+          <FunctionImport Name="SP_Account_DELETE">
+            <Parameter Name="Username" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SP_Account_GetAll" ReturnType="Collection(phongkhambacduong.comModel.SP_Account_GetAll_Result)" />
+          <FunctionImport Name="SP_Account_GetByUsername" ReturnType="Collection(phongkhambacduong.comModel.SP_Account_GetByUsername_Result)">
+            <Parameter Name="Username" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SP_Account_INSERT">
+            <Parameter Name="Username" Mode="In" Type="String" />
+            <Parameter Name="Password" Mode="In" Type="String" />
+            <Parameter Name="Email" Mode="In" Type="String" />
+            <Parameter Name="Sex" Mode="In" Type="Boolean" />
+            <Parameter Name="Name" Mode="In" Type="String" />
+            <Parameter Name="Birthday" Mode="In" Type="DateTime" />
+            <Parameter Name="Adress" Mode="In" Type="String" />
+            <Parameter Name="Phone" Mode="In" Type="String" />
+            <Parameter Name="ID_Position" Mode="In" Type="Guid" />
+            <Parameter Name="Avatar" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SP_Account_UPDATE">
+            <Parameter Name="Username" Mode="In" Type="String" />
+            <Parameter Name="Password" Mode="In" Type="String" />
+            <Parameter Name="Email" Mode="In" Type="String" />
+            <Parameter Name="Sex" Mode="In" Type="Boolean" />
+            <Parameter Name="Name" Mode="In" Type="String" />
+            <Parameter Name="Birthday" Mode="In" Type="DateTime" />
+            <Parameter Name="Adress" Mode="In" Type="String" />
+            <Parameter Name="Phone" Mode="In" Type="String" />
+            <Parameter Name="ID_Position" Mode="In" Type="Guid" />
+            <Parameter Name="Avatar" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_alterdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="SP_BacSi_DELETE">
+            <Parameter Name="ID" Mode="In" Type="Guid" />
+          </FunctionImport>
+          <FunctionImport Name="SP_BacSi_GetAll" ReturnType="Collection(phongkhambacduong.comModel.SP_BacSi_GetAll_Result)" />
+          <FunctionImport Name="SP_BacSi_GetByID" ReturnType="Collection(phongkhambacduong.comModel.SP_BacSi_GetByID_Result)">
+            <Parameter Name="ID" Mode="In" Type="Guid" />
+          </FunctionImport>
+          <FunctionImport Name="SP_BacSi_INSERT">
+            <Parameter Name="ID" Mode="In" Type="Guid" />
+            <Parameter Name="Name" Mode="In" Type="String" />
+            <Parameter Name="ID_PhongBan" Mode="In" Type="Guid" />
+            <Parameter Name="LinkImage" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SP_BacSi_UPDATE">
+            <Parameter Name="ID" Mode="In" Type="Guid" />
+            <Parameter Name="Name" Mode="In" Type="String" />
+            <Parameter Name="ID_PhongBan" Mode="In" Type="Guid" />
+            <Parameter Name="LinkImage" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SP_CoSoVatChat_DELETE">
+            <Parameter Name="ID" Mode="In" Type="Guid" />
+          </FunctionImport>
+          <FunctionImport Name="SP_CoSoVatChat_GetAll" ReturnType="Collection(phongkhambacduong.comModel.SP_CoSoVatChat_GetAll_Result)" />
+          <FunctionImport Name="SP_CoSoVatChat_GetByID" ReturnType="Collection(phongkhambacduong.comModel.SP_CoSoVatChat_GetByID_Result)">
+            <Parameter Name="ID" Mode="In" Type="Guid" />
+          </FunctionImport>
+          <FunctionImport Name="SP_CoSoVatChat_INSERT">
+            <Parameter Name="ID" Mode="In" Type="Guid" />
+            <Parameter Name="GioiThieu" Mode="In" Type="String" />
+            <Parameter Name="LinkImage" Mode="In" Type="String" />
+            <Parameter Name="Index" Mode="In" Type="Int32" />
+            <Parameter Name="hrefAjax" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SP_CoSoVatChat_UPDATE">
+            <Parameter Name="ID" Mode="In" Type="Guid" />
+            <Parameter Name="GioiThieu" Mode="In" Type="String" />
+            <Parameter Name="LinkImage" Mode="In" Type="String" />
+            <Parameter Name="Index" Mode="In" Type="Int32" />
+            <Parameter Name="hrefAjax" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_creatediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="SP_CTCoSoVatChat_DELETE">
+            <Parameter Name="ID" Mode="In" Type="Guid" />
+          </FunctionImport>
+          <FunctionImport Name="SP_CTCoSoVatChat_DELETEForID">
+            <Parameter Name="ID_CoSoVatChat" Mode="In" Type="Guid" />
+          </FunctionImport>
+          <FunctionImport Name="SP_CTCoSoVatChat_GetAll" ReturnType="Collection(phongkhambacduong.comModel.SP_CTCoSoVatChat_GetAll_Result)" />
+          <FunctionImport Name="SP_CTCoSoVatChat_GetByID" ReturnType="Collection(phongkhambacduong.comModel.SP_CTCoSoVatChat_GetByID_Result)">
+            <Parameter Name="ID" Mode="In" Type="Guid" />
+          </FunctionImport>
+          <FunctionImport Name="SP_CTCoSoVatChat_GetGroupByID" ReturnType="Collection(phongkhambacduong.comModel.SP_CTCoSoVatChat_GetGroupByID_Result)">
+            <Parameter Name="ID_CoSoVatChat" Mode="In" Type="Guid" />
+          </FunctionImport>
+          <FunctionImport Name="SP_CTCoSoVatChat_INSERT">
+            <Parameter Name="ID" Mode="In" Type="Guid" />
+            <Parameter Name="ID_CoSoVatChat" Mode="In" Type="Guid" />
+            <Parameter Name="LinkImage" Mode="In" Type="String" />
+            <Parameter Name="NoiDung" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SP_CTCoSoVatChat_UPDATE">
+            <Parameter Name="ID" Mode="In" Type="Guid" />
+            <Parameter Name="ID_CoSoVatChat" Mode="In" Type="Guid" />
+            <Parameter Name="LinkImage" Mode="In" Type="String" />
+            <Parameter Name="NoiDung" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SP_DiaChi_DELETE">
+            <Parameter Name="ID" Mode="In" Type="Guid" />
+          </FunctionImport>
+          <FunctionImport Name="SP_DiaChi_GetAll" ReturnType="Collection(phongkhambacduong.comModel.SP_DiaChi_GetAll_Result)" />
+          <FunctionImport Name="SP_DiaChi_GetByID" ReturnType="Collection(phongkhambacduong.comModel.SP_DiaChi_GetByID_Result)">
+            <Parameter Name="ID" Mode="In" Type="Guid" />
+          </FunctionImport>
+          <FunctionImport Name="SP_DiaChi_INSERT">
+            <Parameter Name="ID" Mode="In" Type="Guid" />
+            <Parameter Name="Mobile" Mode="In" Type="String" />
+            <Parameter Name="Adress" Mode="In" Type="String" />
+            <Parameter Name="Hotline" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SP_DiaChi_UPDATE">
+            <Parameter Name="ID" Mode="In" Type="Guid" />
+            <Parameter Name="Mobile" Mode="In" Type="String" />
+            <Parameter Name="Adress" Mode="In" Type="String" />
+            <Parameter Name="Hotline" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SP_DichVu_DELETE">
+            <Parameter Name="ID" Mode="In" Type="Guid" />
+          </FunctionImport>
+          <FunctionImport Name="SP_DichVu_GetAll" ReturnType="Collection(phongkhambacduong.comModel.SP_DichVu_GetAll_Result)" />
+          <FunctionImport Name="SP_DichVu_GetByID" ReturnType="Collection(phongkhambacduong.comModel.SP_DichVu_GetByID_Result)">
+            <Parameter Name="ID" Mode="In" Type="Guid" />
+          </FunctionImport>
+          <FunctionImport Name="SP_DichVu_INSERT">
+            <Parameter Name="ID" Mode="In" Type="Guid" />
+            <Parameter Name="Icon" Mode="In" Type="String" />
+            <Parameter Name="Name" Mode="In" Type="String" />
+            <Parameter Name="GioiThieu" Mode="In" Type="String" />
+            <Parameter Name="hrefAjax" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SP_DichVu_UPDATE">
+            <Parameter Name="ID" Mode="In" Type="Guid" />
+            <Parameter Name="Icon" Mode="In" Type="String" />
+            <Parameter Name="Name" Mode="In" Type="String" />
+            <Parameter Name="GioiThieu" Mode="In" Type="String" />
+            <Parameter Name="hrefAjax" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_dropdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="SP_GopY_DELETE">
+            <Parameter Name="ID" Mode="In" Type="Guid" />
+          </FunctionImport>
+          <FunctionImport Name="SP_GopY_GetAll" ReturnType="Collection(phongkhambacduong.comModel.SP_GopY_GetAll_Result)" />
+          <FunctionImport Name="SP_GopY_GetByID" ReturnType="Collection(phongkhambacduong.comModel.SP_GopY_GetByID_Result)">
+            <Parameter Name="ID" Mode="In" Type="Guid" />
+          </FunctionImport>
+          <FunctionImport Name="SP_GopY_INSERT">
+            <Parameter Name="ID" Mode="In" Type="Guid" />
+            <Parameter Name="ThoiGian" Mode="In" Type="DateTime" />
+            <Parameter Name="HoTen" Mode="In" Type="String" />
+            <Parameter Name="DienThoai" Mode="In" Type="String" />
+            <Parameter Name="Email" Mode="In" Type="String" />
+            <Parameter Name="NoiDung" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SP_GopY_UPDATE">
+            <Parameter Name="ID" Mode="In" Type="Guid" />
+            <Parameter Name="ThoiGian" Mode="In" Type="DateTime" />
+            <Parameter Name="HoTen" Mode="In" Type="String" />
+            <Parameter Name="DienThoai" Mode="In" Type="String" />
+            <Parameter Name="Email" Mode="In" Type="String" />
+            <Parameter Name="NoiDung" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(phongkhambacduong.comModel.sp_helpdiagramdefinition_Result)">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(phongkhambacduong.comModel.sp_helpdiagrams_Result)">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="SP_Menu_DELETE">
+            <Parameter Name="ID" Mode="In" Type="Guid" />
+          </FunctionImport>
+          <FunctionImport Name="SP_Menu_GetAll" ReturnType="Collection(phongkhambacduong.comModel.SP_Menu_GetAll_Result)" />
+          <FunctionImport Name="SP_Menu_GetByID" ReturnType="Collection(phongkhambacduong.comModel.SP_Menu_GetByID_Result)">
+            <Parameter Name="ID" Mode="In" Type="Guid" />
+          </FunctionImport>
+          <FunctionImport Name="SP_Menu_INSERT">
+            <Parameter Name="ID" Mode="In" Type="Guid" />
+            <Parameter Name="Display" Mode="In" Type="String" />
+            <Parameter Name="Rank" Mode="In" Type="Int32" />
+            <Parameter Name="Neo" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SP_Menu_UPDATE">
+            <Parameter Name="ID" Mode="In" Type="Guid" />
+            <Parameter Name="Display" Mode="In" Type="String" />
+            <Parameter Name="Rank" Mode="In" Type="Int32" />
+            <Parameter Name="Neo" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SP_PhongBan_DELETE">
+            <Parameter Name="ID" Mode="In" Type="Guid" />
+          </FunctionImport>
+          <FunctionImport Name="SP_PhongBan_GetAll" ReturnType="Collection(phongkhambacduong.comModel.SP_PhongBan_GetAll_Result)" />
+          <FunctionImport Name="SP_PhongBan_GetByID" ReturnType="Collection(phongkhambacduong.comModel.SP_PhongBan_GetByID_Result)">
+            <Parameter Name="ID" Mode="In" Type="Guid" />
+          </FunctionImport>
+          <FunctionImport Name="SP_PhongBan_INSERT">
+            <Parameter Name="ID" Mode="In" Type="Guid" />
+            <Parameter Name="Name" Mode="In" Type="String" />
+            <Parameter Name="MoTa" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SP_PhongBan_UPDATE">
+            <Parameter Name="ID" Mode="In" Type="Guid" />
+            <Parameter Name="Name" Mode="In" Type="String" />
+            <Parameter Name="MoTa" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SP_Position_DELETE">
+            <Parameter Name="ID" Mode="In" Type="Guid" />
+          </FunctionImport>
+          <FunctionImport Name="SP_Position_GetAll" ReturnType="Collection(phongkhambacduong.comModel.SP_Position_GetAll_Result)" />
+          <FunctionImport Name="SP_Position_GetByID" ReturnType="Collection(phongkhambacduong.comModel.SP_Position_GetByID_Result)">
+            <Parameter Name="ID" Mode="In" Type="Guid" />
+          </FunctionImport>
+          <FunctionImport Name="SP_Position_INSERT">
+            <Parameter Name="ID" Mode="In" Type="Guid" />
+            <Parameter Name="Name" Mode="In" Type="String" />
+            <Parameter Name="MieuTa" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SP_Position_UPDATE">
+            <Parameter Name="ID" Mode="In" Type="Guid" />
+            <Parameter Name="Name" Mode="In" Type="String" />
+            <Parameter Name="MieuTa" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_renamediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="new_diagramname" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SP_SanPham_DELETE">
+            <Parameter Name="ID" Mode="In" Type="Guid" />
+          </FunctionImport>
+          <FunctionImport Name="SP_SanPham_GetAll" ReturnType="Collection(phongkhambacduong.comModel.SP_SanPham_GetAll_Result)" />
+          <FunctionImport Name="SP_SanPham_GetByID" ReturnType="Collection(phongkhambacduong.comModel.SP_SanPham_GetByID_Result)">
+            <Parameter Name="ID" Mode="In" Type="Guid" />
+          </FunctionImport>
+          <FunctionImport Name="SP_SanPham_INSERT">
+            <Parameter Name="ID" Mode="In" Type="Guid" />
+            <Parameter Name="LinkImage" Mode="In" Type="String" />
+            <Parameter Name="Name" Mode="In" Type="String" />
+            <Parameter Name="GiaTien" Mode="In" Type="Int32" />
+            <Parameter Name="Rank" Mode="In" Type="Int32" />
+            <Parameter Name="ThongTin" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SP_SanPham_UPDATE">
+            <Parameter Name="ID" Mode="In" Type="Guid" />
+            <Parameter Name="LinkImage" Mode="In" Type="String" />
+            <Parameter Name="Name" Mode="In" Type="String" />
+            <Parameter Name="GiaTien" Mode="In" Type="Int32" />
+            <Parameter Name="Rank" Mode="In" Type="Int32" />
+            <Parameter Name="ThongTin" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SP_Slogan_DELETE">
+            <Parameter Name="ID" Mode="In" Type="Guid" />
+          </FunctionImport>
+          <FunctionImport Name="SP_Slogan_GetAll" ReturnType="Collection(phongkhambacduong.comModel.SP_Slogan_GetAll_Result)" />
+          <FunctionImport Name="SP_Slogan_GetByID" ReturnType="Collection(phongkhambacduong.comModel.SP_Slogan_GetByID_Result)">
+            <Parameter Name="ID" Mode="In" Type="Guid" />
+          </FunctionImport>
+          <FunctionImport Name="SP_Slogan_INSERT">
+            <Parameter Name="ID" Mode="In" Type="Guid" />
+            <Parameter Name="DichVu" Mode="In" Type="String" />
+            <Parameter Name="Slogan_DichVu" Mode="In" Type="String" />
+            <Parameter Name="VeChungToi" Mode="In" Type="String" />
+            <Parameter Name="Slogan_VeChungToi" Mode="In" Type="String" />
+            <Parameter Name="nameContent_VeChungToi" Mode="In" Type="String" />
+            <Parameter Name="Content_VeChungToi" Mode="In" Type="String" />
+            <Parameter Name="CSVC" Mode="In" Type="String" />
+            <Parameter Name="Slogan_CSVC" Mode="In" Type="String" />
+            <Parameter Name="BacSi" Mode="In" Type="String" />
+            <Parameter Name="Slogan_BacSi" Mode="In" Type="String" />
+            <Parameter Name="LienHe" Mode="In" Type="String" />
+            <Parameter Name="Slogan_Lienhe" Mode="In" Type="String" />
+            <Parameter Name="GioiThieu" Mode="In" Type="String" />
+            <Parameter Name="ImageGioiThieu" Mode="In" Type="String" />
+            <Parameter Name="ImagePage" Mode="In" Type="String" />
+            <Parameter Name="SloganPage" Mode="In" Type="String" />
+            <Parameter Name="LogoPage" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SP_Slogan_UPDATE">
+            <Parameter Name="ID" Mode="In" Type="Guid" />
+            <Parameter Name="DichVu" Mode="In" Type="String" />
+            <Parameter Name="Slogan_DichVu" Mode="In" Type="String" />
+            <Parameter Name="VeChungToi" Mode="In" Type="String" />
+            <Parameter Name="Slogan_VeChungToi" Mode="In" Type="String" />
+            <Parameter Name="nameContent_VeChungToi" Mode="In" Type="String" />
+            <Parameter Name="Content_VeChungToi" Mode="In" Type="String" />
+            <Parameter Name="CSVC" Mode="In" Type="String" />
+            <Parameter Name="Slogan_CSVC" Mode="In" Type="String" />
+            <Parameter Name="BacSi" Mode="In" Type="String" />
+            <Parameter Name="Slogan_BacSi" Mode="In" Type="String" />
+            <Parameter Name="LienHe" Mode="In" Type="String" />
+            <Parameter Name="Slogan_Lienhe" Mode="In" Type="String" />
+            <Parameter Name="GioiThieu" Mode="In" Type="String" />
+            <Parameter Name="ImageGioiThieu" Mode="In" Type="String" />
+            <Parameter Name="ImagePage" Mode="In" Type="String" />
+            <Parameter Name="SloganPage" Mode="In" Type="String" />
+            <Parameter Name="LogoPage" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_upgraddiagrams" />
+        </EntityContainer>
+        <ComplexType Name="SP_Account_GetAll_Result">
+          <Property Type="String" Name="Username" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Password" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Email" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="Sex" Nullable="true" />
+          <Property Type="String" Name="Name" Nullable="true" MaxLength="50" />
+          <Property Type="DateTime" Name="Birthday" Nullable="true" />
+          <Property Type="String" Name="Adress" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Phone" Nullable="true" MaxLength="11" />
+          <Property Type="Guid" Name="ID_Position" Nullable="true" />
+          <Property Type="String" Name="Avatar" Nullable="true" MaxLength="500" />
+        </ComplexType>
+        <ComplexType Name="SP_Account_GetByUsername_Result">
+          <Property Type="String" Name="Username" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Password" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Email" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="Sex" Nullable="true" />
+          <Property Type="String" Name="Name" Nullable="true" MaxLength="50" />
+          <Property Type="DateTime" Name="Birthday" Nullable="true" />
+          <Property Type="String" Name="Adress" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Phone" Nullable="true" MaxLength="11" />
+          <Property Type="Guid" Name="ID_Position" Nullable="true" />
+          <Property Type="String" Name="Avatar" Nullable="true" MaxLength="500" />
+        </ComplexType>
+        <ComplexType Name="SP_BacSi_GetAll_Result">
+          <Property Type="Guid" Name="ID" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="true" MaxLength="200" />
+          <Property Type="Guid" Name="ID_PhongBan" Nullable="true" />
+          <Property Type="String" Name="LinkImage" Nullable="true" MaxLength="201" />
+        </ComplexType>
+        <ComplexType Name="SP_BacSi_GetByID_Result">
+          <Property Type="Guid" Name="ID" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="true" MaxLength="200" />
+          <Property Type="Guid" Name="ID_PhongBan" Nullable="true" />
+          <Property Type="String" Name="LinkImage" Nullable="true" MaxLength="201" />
+        </ComplexType>
+        <ComplexType Name="SP_CoSoVatChat_GetAll_Result">
+          <Property Type="Guid" Name="ID" Nullable="false" />
+          <Property Type="String" Name="GioiThieu" Nullable="true" />
+          <Property Type="String" Name="LinkImage" Nullable="true" MaxLength="500" />
+          <Property Type="Int32" Name="Index" Nullable="true" />
+          <Property Type="String" Name="hrefAjax" Nullable="true" MaxLength="500" />
+        </ComplexType>
+        <ComplexType Name="SP_CoSoVatChat_GetByID_Result">
+          <Property Type="Guid" Name="ID" Nullable="false" />
+          <Property Type="String" Name="GioiThieu" Nullable="true" />
+          <Property Type="String" Name="LinkImage" Nullable="true" MaxLength="500" />
+          <Property Type="Int32" Name="Index" Nullable="true" />
+          <Property Type="String" Name="hrefAjax" Nullable="true" MaxLength="500" />
+        </ComplexType>
+        <ComplexType Name="SP_CTCoSoVatChat_GetAll_Result">
+          <Property Type="Guid" Name="ID" Nullable="false" />
+          <Property Type="Guid" Name="ID_CoSoVatChat" Nullable="true" />
+          <Property Type="String" Name="LinkImage" Nullable="true" />
+          <Property Type="String" Name="NoiDung" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="SP_CTCoSoVatChat_GetByID_Result">
+          <Property Type="Guid" Name="ID" Nullable="false" />
+          <Property Type="Guid" Name="ID_CoSoVatChat" Nullable="true" />
+          <Property Type="String" Name="LinkImage" Nullable="true" />
+          <Property Type="String" Name="NoiDung" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="SP_CTCoSoVatChat_GetGroupByID_Result">
+          <Property Type="Guid" Name="ID" Nullable="false" />
+          <Property Type="Guid" Name="ID_CoSoVatChat" Nullable="true" />
+          <Property Type="String" Name="LinkImage" Nullable="true" />
+          <Property Type="String" Name="NoiDung" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="SP_DiaChi_GetAll_Result">
+          <Property Type="Guid" Name="ID" Nullable="false" />
+          <Property Type="String" Name="Mobile" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="Adress" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="Hotline" Nullable="true" MaxLength="200" />
+        </ComplexType>
+        <ComplexType Name="SP_DiaChi_GetByID_Result">
+          <Property Type="Guid" Name="ID" Nullable="false" />
+          <Property Type="String" Name="Mobile" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="Adress" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="Hotline" Nullable="true" MaxLength="200" />
+        </ComplexType>
+        <ComplexType Name="SP_DichVu_GetAll_Result">
+          <Property Type="Guid" Name="ID" Nullable="false" />
+          <Property Type="String" Name="Icon" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="Name" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="GioiThieu" Nullable="true" />
+          <Property Type="String" Name="hrefAjax" Nullable="true" MaxLength="200" />
+        </ComplexType>
+        <ComplexType Name="SP_DichVu_GetByID_Result">
+          <Property Type="Guid" Name="ID" Nullable="false" />
+          <Property Type="String" Name="Icon" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="Name" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="GioiThieu" Nullable="true" />
+          <Property Type="String" Name="hrefAjax" Nullable="true" MaxLength="200" />
+        </ComplexType>
+        <ComplexType Name="SP_GopY_GetAll_Result">
+          <Property Type="Guid" Name="ID" Nullable="false" />
+          <Property Type="DateTime" Name="ThoiGian" Nullable="true" />
+          <Property Type="String" Name="HoTen" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="DienThoai" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="Email" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="NoiDung" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="SP_GopY_GetByID_Result">
+          <Property Type="Guid" Name="ID" Nullable="false" />
+          <Property Type="DateTime" Name="ThoiGian" Nullable="true" />
+          <Property Type="String" Name="HoTen" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="DienThoai" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="Email" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="NoiDung" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="sp_helpdiagramdefinition_Result">
+          <Property Type="Int32" Name="version" Nullable="true" />
+          <Property Type="Binary" Name="definition" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="sp_helpdiagrams_Result">
+          <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+          <Property Type="Int32" Name="OwnerID" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="SP_Menu_GetAll_Result">
+          <Property Type="Guid" Name="ID" Nullable="false" />
+          <Property Type="String" Name="Display" Nullable="true" />
+          <Property Type="Int32" Name="Rank" Nullable="true" />
+          <Property Type="String" Name="Neo" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="SP_Menu_GetByID_Result">
+          <Property Type="Guid" Name="ID" Nullable="false" />
+          <Property Type="String" Name="Display" Nullable="true" />
+          <Property Type="Int32" Name="Rank" Nullable="true" />
+          <Property Type="String" Name="Neo" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="SP_PhongBan_GetAll_Result">
+          <Property Type="Guid" Name="ID" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="MoTa" Nullable="true" MaxLength="500" />
+        </ComplexType>
+        <ComplexType Name="SP_PhongBan_GetByID_Result">
+          <Property Type="Guid" Name="ID" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="MoTa" Nullable="true" MaxLength="500" />
+        </ComplexType>
+        <ComplexType Name="SP_Position_GetAll_Result">
+          <Property Type="Guid" Name="ID" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="MieuTa" Nullable="true" MaxLength="200" />
+        </ComplexType>
+        <ComplexType Name="SP_Position_GetByID_Result">
+          <Property Type="Guid" Name="ID" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="MieuTa" Nullable="true" MaxLength="200" />
+        </ComplexType>
+        <ComplexType Name="SP_SanPham_GetAll_Result">
+          <Property Type="Guid" Name="ID" Nullable="false" />
+          <Property Type="String" Name="LinkImage" Nullable="true" />
+          <Property Type="String" Name="Name" Nullable="true" MaxLength="200" />
+          <Property Type="Int32" Name="GiaTien" Nullable="true" />
+          <Property Type="Int32" Name="Rank" Nullable="true" />
+          <Property Type="String" Name="ThongTin" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="SP_SanPham_GetByID_Result">
+          <Property Type="Guid" Name="ID" Nullable="false" />
+          <Property Type="String" Name="LinkImage" Nullable="true" />
+          <Property Type="String" Name="Name" Nullable="true" MaxLength="200" />
+          <Property Type="Int32" Name="GiaTien" Nullable="true" />
+          <Property Type="Int32" Name="Rank" Nullable="true" />
+          <Property Type="String" Name="ThongTin" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="SP_Slogan_GetAll_Result">
+          <Property Type="Guid" Name="ID" Nullable="false" />
+          <Property Type="String" Name="DichVu" Nullable="true" />
+          <Property Type="String" Name="Slogan_DichVu" Nullable="true" />
+          <Property Type="String" Name="VeChungToi" Nullable="true" />
+          <Property Type="String" Name="Slogan_VeChungToi" Nullable="true" />
+          <Property Type="String" Name="nameContent_VeChungToi" Nullable="true" />
+          <Property Type="String" Name="Content_VeChungToi" Nullable="true" />
+          <Property Type="String" Name="CSVC" Nullable="true" />
+          <Property Type="String" Name="Slogan_CSVC" Nullable="true" />
+          <Property Type="String" Name="BacSi" Nullable="true" />
+          <Property Type="String" Name="Slogan_BacSi" Nullable="true" />
+          <Property Type="String" Name="LienHe" Nullable="true" />
+          <Property Type="String" Name="Slogan_Lienhe" Nullable="true" />
+          <Property Type="String" Name="GioiThieu" Nullable="true" />
+          <Property Type="String" Name="ImageGioiThieu" Nullable="true" />
+          <Property Type="String" Name="ImagePage" Nullable="true" />
+          <Property Type="String" Name="SloganPage" Nullable="true" />
+          <Property Type="String" Name="LogoPage" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="SP_Slogan_GetByID_Result">
+          <Property Type="Guid" Name="ID" Nullable="false" />
+          <Property Type="String" Name="DichVu" Nullable="true" />
+          <Property Type="String" Name="Slogan_DichVu" Nullable="true" />
+          <Property Type="String" Name="VeChungToi" Nullable="true" />
+          <Property Type="String" Name="Slogan_VeChungToi" Nullable="true" />
+          <Property Type="String" Name="nameContent_VeChungToi" Nullable="true" />
+          <Property Type="String" Name="Content_VeChungToi" Nullable="true" />
+          <Property Type="String" Name="CSVC" Nullable="true" />
+          <Property Type="String" Name="Slogan_CSVC" Nullable="true" />
+          <Property Type="String" Name="BacSi" Nullable="true" />
+          <Property Type="String" Name="Slogan_BacSi" Nullable="true" />
+          <Property Type="String" Name="LienHe" Nullable="true" />
+          <Property Type="String" Name="Slogan_Lienhe" Nullable="true" />
+          <Property Type="String" Name="GioiThieu" Nullable="true" />
+          <Property Type="String" Name="ImageGioiThieu" Nullable="true" />
+          <Property Type="String" Name="ImagePage" Nullable="true" />
+          <Property Type="String" Name="SloganPage" Nullable="true" />
+          <Property Type="String" Name="LogoPage" Nullable="true" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="phongkhambacduongcomModelStoreContainer" CdmEntityContainer="PhongKhamEntities" >
+          <FunctionImportMapping FunctionImportName="SP_Account_DELETE" FunctionName="phongkhambacduong.comModel.Store.SP_Account_DELETE" />
+          <FunctionImportMapping FunctionImportName="SP_Account_GetAll" FunctionName="phongkhambacduong.comModel.Store.SP_Account_GetAll">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="phongkhambacduong.comModel.SP_Account_GetAll_Result">
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Sex" ColumnName="Sex" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Birthday" ColumnName="Birthday" />
+                <ScalarProperty Name="Adress" ColumnName="Adress" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="ID_Position" ColumnName="ID_Position" />
+                <ScalarProperty Name="Avatar" ColumnName="Avatar" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_Account_GetByUsername" FunctionName="phongkhambacduong.comModel.Store.SP_Account_GetByUsername">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="phongkhambacduong.comModel.SP_Account_GetByUsername_Result">
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Sex" ColumnName="Sex" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Birthday" ColumnName="Birthday" />
+                <ScalarProperty Name="Adress" ColumnName="Adress" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="ID_Position" ColumnName="ID_Position" />
+                <ScalarProperty Name="Avatar" ColumnName="Avatar" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_Account_INSERT" FunctionName="phongkhambacduong.comModel.Store.SP_Account_INSERT" />
+          <FunctionImportMapping FunctionImportName="SP_Account_UPDATE" FunctionName="phongkhambacduong.comModel.Store.SP_Account_UPDATE" />
+          <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="phongkhambacduong.comModel.Store.sp_alterdiagram" />
+          <FunctionImportMapping FunctionImportName="SP_BacSi_DELETE" FunctionName="phongkhambacduong.comModel.Store.SP_BacSi_DELETE" />
+          <FunctionImportMapping FunctionImportName="SP_BacSi_GetAll" FunctionName="phongkhambacduong.comModel.Store.SP_BacSi_GetAll">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="phongkhambacduong.comModel.SP_BacSi_GetAll_Result">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID_PhongBan" ColumnName="ID_PhongBan" />
+                <ScalarProperty Name="LinkImage" ColumnName="LinkImage" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_BacSi_GetByID" FunctionName="phongkhambacduong.comModel.Store.SP_BacSi_GetByID">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="phongkhambacduong.comModel.SP_BacSi_GetByID_Result">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID_PhongBan" ColumnName="ID_PhongBan" />
+                <ScalarProperty Name="LinkImage" ColumnName="LinkImage" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_BacSi_INSERT" FunctionName="phongkhambacduong.comModel.Store.SP_BacSi_INSERT" />
+          <FunctionImportMapping FunctionImportName="SP_BacSi_UPDATE" FunctionName="phongkhambacduong.comModel.Store.SP_BacSi_UPDATE" />
+          <FunctionImportMapping FunctionImportName="SP_CoSoVatChat_DELETE" FunctionName="phongkhambacduong.comModel.Store.SP_CoSoVatChat_DELETE" />
+          <FunctionImportMapping FunctionImportName="SP_CoSoVatChat_GetAll" FunctionName="phongkhambacduong.comModel.Store.SP_CoSoVatChat_GetAll">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="phongkhambacduong.comModel.SP_CoSoVatChat_GetAll_Result">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="GioiThieu" ColumnName="GioiThieu" />
+                <ScalarProperty Name="LinkImage" ColumnName="LinkImage" />
+                <ScalarProperty Name="Index" ColumnName="Index" />
+                <ScalarProperty Name="hrefAjax" ColumnName="hrefAjax" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_CoSoVatChat_GetByID" FunctionName="phongkhambacduong.comModel.Store.SP_CoSoVatChat_GetByID">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="phongkhambacduong.comModel.SP_CoSoVatChat_GetByID_Result">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="GioiThieu" ColumnName="GioiThieu" />
+                <ScalarProperty Name="LinkImage" ColumnName="LinkImage" />
+                <ScalarProperty Name="Index" ColumnName="Index" />
+                <ScalarProperty Name="hrefAjax" ColumnName="hrefAjax" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_CoSoVatChat_INSERT" FunctionName="phongkhambacduong.comModel.Store.SP_CoSoVatChat_INSERT" />
+          <FunctionImportMapping FunctionImportName="SP_CoSoVatChat_UPDATE" FunctionName="phongkhambacduong.comModel.Store.SP_CoSoVatChat_UPDATE" />
+          <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="phongkhambacduong.comModel.Store.sp_creatediagram" />
+          <FunctionImportMapping FunctionImportName="SP_CTCoSoVatChat_DELETE" FunctionName="phongkhambacduong.comModel.Store.SP_CTCoSoVatChat_DELETE" />
+          <FunctionImportMapping FunctionImportName="SP_CTCoSoVatChat_DELETEForID" FunctionName="phongkhambacduong.comModel.Store.SP_CTCoSoVatChat_DELETEForID" />
+          <FunctionImportMapping FunctionImportName="SP_CTCoSoVatChat_GetAll" FunctionName="phongkhambacduong.comModel.Store.SP_CTCoSoVatChat_GetAll">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="phongkhambacduong.comModel.SP_CTCoSoVatChat_GetAll_Result">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ID_CoSoVatChat" ColumnName="ID_CoSoVatChat" />
+                <ScalarProperty Name="LinkImage" ColumnName="LinkImage" />
+                <ScalarProperty Name="NoiDung" ColumnName="NoiDung" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_CTCoSoVatChat_GetByID" FunctionName="phongkhambacduong.comModel.Store.SP_CTCoSoVatChat_GetByID">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="phongkhambacduong.comModel.SP_CTCoSoVatChat_GetByID_Result">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ID_CoSoVatChat" ColumnName="ID_CoSoVatChat" />
+                <ScalarProperty Name="LinkImage" ColumnName="LinkImage" />
+                <ScalarProperty Name="NoiDung" ColumnName="NoiDung" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_CTCoSoVatChat_GetGroupByID" FunctionName="phongkhambacduong.comModel.Store.SP_CTCoSoVatChat_GetGroupByID">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="phongkhambacduong.comModel.SP_CTCoSoVatChat_GetGroupByID_Result">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ID_CoSoVatChat" ColumnName="ID_CoSoVatChat" />
+                <ScalarProperty Name="LinkImage" ColumnName="LinkImage" />
+                <ScalarProperty Name="NoiDung" ColumnName="NoiDung" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_CTCoSoVatChat_INSERT" FunctionName="phongkhambacduong.comModel.Store.SP_CTCoSoVatChat_INSERT" />
+          <FunctionImportMapping FunctionImportName="SP_CTCoSoVatChat_UPDATE" FunctionName="phongkhambacduong.comModel.Store.SP_CTCoSoVatChat_UPDATE" />
+          <FunctionImportMapping FunctionImportName="SP_DiaChi_DELETE" FunctionName="phongkhambacduong.comModel.Store.SP_DiaChi_DELETE" />
+          <FunctionImportMapping FunctionImportName="SP_DiaChi_GetAll" FunctionName="phongkhambacduong.comModel.Store.SP_DiaChi_GetAll">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="phongkhambacduong.comModel.SP_DiaChi_GetAll_Result">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+                <ScalarProperty Name="Adress" ColumnName="Adress" />
+                <ScalarProperty Name="Hotline" ColumnName="Hotline" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_DiaChi_GetByID" FunctionName="phongkhambacduong.comModel.Store.SP_DiaChi_GetByID">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="phongkhambacduong.comModel.SP_DiaChi_GetByID_Result">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+                <ScalarProperty Name="Adress" ColumnName="Adress" />
+                <ScalarProperty Name="Hotline" ColumnName="Hotline" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_DiaChi_INSERT" FunctionName="phongkhambacduong.comModel.Store.SP_DiaChi_INSERT" />
+          <FunctionImportMapping FunctionImportName="SP_DiaChi_UPDATE" FunctionName="phongkhambacduong.comModel.Store.SP_DiaChi_UPDATE" />
+          <FunctionImportMapping FunctionImportName="SP_DichVu_DELETE" FunctionName="phongkhambacduong.comModel.Store.SP_DichVu_DELETE" />
+          <FunctionImportMapping FunctionImportName="SP_DichVu_GetAll" FunctionName="phongkhambacduong.comModel.Store.SP_DichVu_GetAll">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="phongkhambacduong.comModel.SP_DichVu_GetAll_Result">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Icon" ColumnName="Icon" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="GioiThieu" ColumnName="GioiThieu" />
+                <ScalarProperty Name="hrefAjax" ColumnName="hrefAjax" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_DichVu_GetByID" FunctionName="phongkhambacduong.comModel.Store.SP_DichVu_GetByID">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="phongkhambacduong.comModel.SP_DichVu_GetByID_Result">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Icon" ColumnName="Icon" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="GioiThieu" ColumnName="GioiThieu" />
+                <ScalarProperty Name="hrefAjax" ColumnName="hrefAjax" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_DichVu_INSERT" FunctionName="phongkhambacduong.comModel.Store.SP_DichVu_INSERT" />
+          <FunctionImportMapping FunctionImportName="SP_DichVu_UPDATE" FunctionName="phongkhambacduong.comModel.Store.SP_DichVu_UPDATE" />
+          <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="phongkhambacduong.comModel.Store.sp_dropdiagram" />
+          <FunctionImportMapping FunctionImportName="SP_GopY_DELETE" FunctionName="phongkhambacduong.comModel.Store.SP_GopY_DELETE" />
+          <FunctionImportMapping FunctionImportName="SP_GopY_GetAll" FunctionName="phongkhambacduong.comModel.Store.SP_GopY_GetAll">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="phongkhambacduong.comModel.SP_GopY_GetAll_Result">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ThoiGian" ColumnName="ThoiGian" />
+                <ScalarProperty Name="HoTen" ColumnName="HoTen" />
+                <ScalarProperty Name="DienThoai" ColumnName="DienThoai" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="NoiDung" ColumnName="NoiDung" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_GopY_GetByID" FunctionName="phongkhambacduong.comModel.Store.SP_GopY_GetByID">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="phongkhambacduong.comModel.SP_GopY_GetByID_Result">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ThoiGian" ColumnName="ThoiGian" />
+                <ScalarProperty Name="HoTen" ColumnName="HoTen" />
+                <ScalarProperty Name="DienThoai" ColumnName="DienThoai" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="NoiDung" ColumnName="NoiDung" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_GopY_INSERT" FunctionName="phongkhambacduong.comModel.Store.SP_GopY_INSERT" />
+          <FunctionImportMapping FunctionImportName="SP_GopY_UPDATE" FunctionName="phongkhambacduong.comModel.Store.SP_GopY_UPDATE" />
+          <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="phongkhambacduong.comModel.Store.sp_helpdiagramdefinition">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="phongkhambacduong.comModel.sp_helpdiagramdefinition_Result">
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="phongkhambacduong.comModel.Store.sp_helpdiagrams">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="phongkhambacduong.comModel.sp_helpdiagrams_Result">
+                <ScalarProperty Name="Database" ColumnName="Database" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Owner" ColumnName="Owner" />
+                <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_Menu_DELETE" FunctionName="phongkhambacduong.comModel.Store.SP_Menu_DELETE" />
+          <FunctionImportMapping FunctionImportName="SP_Menu_GetAll" FunctionName="phongkhambacduong.comModel.Store.SP_Menu_GetAll">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="phongkhambacduong.comModel.SP_Menu_GetAll_Result">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Display" ColumnName="Display" />
+                <ScalarProperty Name="Rank" ColumnName="Rank" />
+                <ScalarProperty Name="Neo" ColumnName="Neo" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_Menu_GetByID" FunctionName="phongkhambacduong.comModel.Store.SP_Menu_GetByID">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="phongkhambacduong.comModel.SP_Menu_GetByID_Result">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Display" ColumnName="Display" />
+                <ScalarProperty Name="Rank" ColumnName="Rank" />
+                <ScalarProperty Name="Neo" ColumnName="Neo" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_Menu_INSERT" FunctionName="phongkhambacduong.comModel.Store.SP_Menu_INSERT" />
+          <FunctionImportMapping FunctionImportName="SP_Menu_UPDATE" FunctionName="phongkhambacduong.comModel.Store.SP_Menu_UPDATE" />
+          <FunctionImportMapping FunctionImportName="SP_PhongBan_DELETE" FunctionName="phongkhambacduong.comModel.Store.SP_PhongBan_DELETE" />
+          <FunctionImportMapping FunctionImportName="SP_PhongBan_GetAll" FunctionName="phongkhambacduong.comModel.Store.SP_PhongBan_GetAll">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="phongkhambacduong.comModel.SP_PhongBan_GetAll_Result">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="MoTa" ColumnName="MoTa" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_PhongBan_GetByID" FunctionName="phongkhambacduong.comModel.Store.SP_PhongBan_GetByID">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="phongkhambacduong.comModel.SP_PhongBan_GetByID_Result">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="MoTa" ColumnName="MoTa" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_PhongBan_INSERT" FunctionName="phongkhambacduong.comModel.Store.SP_PhongBan_INSERT" />
+          <FunctionImportMapping FunctionImportName="SP_PhongBan_UPDATE" FunctionName="phongkhambacduong.comModel.Store.SP_PhongBan_UPDATE" />
+          <FunctionImportMapping FunctionImportName="SP_Position_DELETE" FunctionName="phongkhambacduong.comModel.Store.SP_Position_DELETE" />
+          <FunctionImportMapping FunctionImportName="SP_Position_GetAll" FunctionName="phongkhambacduong.comModel.Store.SP_Position_GetAll">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="phongkhambacduong.comModel.SP_Position_GetAll_Result">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="MieuTa" ColumnName="MieuTa" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_Position_GetByID" FunctionName="phongkhambacduong.comModel.Store.SP_Position_GetByID">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="phongkhambacduong.comModel.SP_Position_GetByID_Result">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="MieuTa" ColumnName="MieuTa" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_Position_INSERT" FunctionName="phongkhambacduong.comModel.Store.SP_Position_INSERT" />
+          <FunctionImportMapping FunctionImportName="SP_Position_UPDATE" FunctionName="phongkhambacduong.comModel.Store.SP_Position_UPDATE" />
+          <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="phongkhambacduong.comModel.Store.sp_renamediagram" />
+          <FunctionImportMapping FunctionImportName="SP_SanPham_DELETE" FunctionName="phongkhambacduong.comModel.Store.SP_SanPham_DELETE" />
+          <FunctionImportMapping FunctionImportName="SP_SanPham_GetAll" FunctionName="phongkhambacduong.comModel.Store.SP_SanPham_GetAll">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="phongkhambacduong.comModel.SP_SanPham_GetAll_Result">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="LinkImage" ColumnName="LinkImage" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="GiaTien" ColumnName="GiaTien" />
+                <ScalarProperty Name="Rank" ColumnName="Rank" />
+                <ScalarProperty Name="ThongTin" ColumnName="ThongTin" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_SanPham_GetByID" FunctionName="phongkhambacduong.comModel.Store.SP_SanPham_GetByID">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="phongkhambacduong.comModel.SP_SanPham_GetByID_Result">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="LinkImage" ColumnName="LinkImage" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="GiaTien" ColumnName="GiaTien" />
+                <ScalarProperty Name="Rank" ColumnName="Rank" />
+                <ScalarProperty Name="ThongTin" ColumnName="ThongTin" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_SanPham_INSERT" FunctionName="phongkhambacduong.comModel.Store.SP_SanPham_INSERT" />
+          <FunctionImportMapping FunctionImportName="SP_SanPham_UPDATE" FunctionName="phongkhambacduong.comModel.Store.SP_SanPham_UPDATE" />
+          <FunctionImportMapping FunctionImportName="SP_Slogan_DELETE" FunctionName="phongkhambacduong.comModel.Store.SP_Slogan_DELETE" />
+          <FunctionImportMapping FunctionImportName="SP_Slogan_GetAll" FunctionName="phongkhambacduong.comModel.Store.SP_Slogan_GetAll">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="phongkhambacduong.comModel.SP_Slogan_GetAll_Result">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="DichVu" ColumnName="DichVu" />
+                <ScalarProperty Name="Slogan_DichVu" ColumnName="Slogan_DichVu" />
+                <ScalarProperty Name="VeChungToi" ColumnName="VeChungToi" />
+                <ScalarProperty Name="Slogan_VeChungToi" ColumnName="Slogan_VeChungToi" />
+                <ScalarProperty Name="nameContent_VeChungToi" ColumnName="nameContent_VeChungToi" />
+                <ScalarProperty Name="Content_VeChungToi" ColumnName="Content_VeChungToi" />
+                <ScalarProperty Name="CSVC" ColumnName="CSVC" />
+                <ScalarProperty Name="Slogan_CSVC" ColumnName="Slogan_CSVC" />
+                <ScalarProperty Name="BacSi" ColumnName="BacSi" />
+                <ScalarProperty Name="Slogan_BacSi" ColumnName="Slogan_BacSi" />
+                <ScalarProperty Name="LienHe" ColumnName="LienHe" />
+                <ScalarProperty Name="Slogan_Lienhe" ColumnName="Slogan_Lienhe" />
+                <ScalarProperty Name="GioiThieu" ColumnName="GioiThieu" />
+                <ScalarProperty Name="ImageGioiThieu" ColumnName="ImageGioiThieu" />
+                <ScalarProperty Name="ImagePage" ColumnName="ImagePage" />
+                <ScalarProperty Name="SloganPage" ColumnName="SloganPage" />
+                <ScalarProperty Name="LogoPage" ColumnName="LogoPage" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_Slogan_GetByID" FunctionName="phongkhambacduong.comModel.Store.SP_Slogan_GetByID">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="phongkhambacduong.comModel.SP_Slogan_GetByID_Result">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="DichVu" ColumnName="DichVu" />
+                <ScalarProperty Name="Slogan_DichVu" ColumnName="Slogan_DichVu" />
+                <ScalarProperty Name="VeChungToi" ColumnName="VeChungToi" />
+                <ScalarProperty Name="Slogan_VeChungToi" ColumnName="Slogan_VeChungToi" />
+                <ScalarProperty Name="nameContent_VeChungToi" ColumnName="nameContent_VeChungToi" />
+                <ScalarProperty Name="Content_VeChungToi" ColumnName="Content_VeChungToi" />
+                <ScalarProperty Name="CSVC" ColumnName="CSVC" />
+                <ScalarProperty Name="Slogan_CSVC" ColumnName="Slogan_CSVC" />
+                <ScalarProperty Name="BacSi" ColumnName="BacSi" />
+                <ScalarProperty Name="Slogan_BacSi" ColumnName="Slogan_BacSi" />
+                <ScalarProperty Name="LienHe" ColumnName="LienHe" />
+                <ScalarProperty Name="Slogan_Lienhe" ColumnName="Slogan_Lienhe" />
+                <ScalarProperty Name="GioiThieu" ColumnName="GioiThieu" />
+                <ScalarProperty Name="ImageGioiThieu" ColumnName="ImageGioiThieu" />
+                <ScalarProperty Name="ImagePage" ColumnName="ImagePage" />
+                <ScalarProperty Name="SloganPage" ColumnName="SloganPage" />
+                <ScalarProperty Name="LogoPage" ColumnName="LogoPage" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_Slogan_INSERT" FunctionName="phongkhambacduong.comModel.Store.SP_Slogan_INSERT" />
+          <FunctionImportMapping FunctionImportName="SP_Slogan_UPDATE" FunctionName="phongkhambacduong.comModel.Store.SP_Slogan_UPDATE" />
+          <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="phongkhambacduong.comModel.Store.sp_upgraddiagrams" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

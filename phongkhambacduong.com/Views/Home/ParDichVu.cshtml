@@ -1,0 +1,10 @@
+﻿@model IEnumerable<WCF.BussinessObject.EntityObject.DichVuObject>
+
+@foreach (var item in Model)
+{
+    <div class='col-md-3 text-center c1 SHOW_popup' data='@item.hrefAjax'>
+        <img src='@item.Icon' alt='@item.Name'>
+        <h3><span class='id-color'>@item.Name</span></h3>
+        <p>@item.GioiThieu</p>
+    </div>
+}

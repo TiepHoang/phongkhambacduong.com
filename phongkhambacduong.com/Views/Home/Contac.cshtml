@@ -1,0 +1,51 @@
+﻿@model WCF.BussinessObject.EntityObject.GopYObject
+
+@using (Html.BeginForm("GopY", "Home", FormMethod.Post))
+{
+    <div class="formBox">
+        <div class="left">
+            <li class="name">
+                @*<input name="tendaydu" type="text" placeholder="Họ tên" value="" onfocus="if (this.value == ''){this.value='';}" onblur="if (this.value == '') {this.value='';}" />*@
+                @Html.TextBoxFor(g => g.HoTen, new { placeholder = "Họ tên" })
+            </li>
+            <li class="phone">
+                @*<input name="dienthoai" type="text" placeholder="Điện thoại" value="" onfocus="if (this.value == ''){this.value='';}" onblur="if (this.value == '') {this.value='';}" />*@
+                @Html.TextBoxFor(g => g.DienThoai, new { placeholder = "Điện thoại" })
+            </li>
+            <li class="mail">
+                @*<input name="email" type="text" placeholder="Email" value="Email" onfocus="if (this.value == 'Email'){this.value='';}" onblur="if (this.value == '') {this.value='Email';}" />*@
+                @Html.TextBoxFor(g => g.Email, new { placeholder = "Email" })
+            </li>
+            @*<li class="local">
+                    <input name="diachi" type="text" placeholder="Địa chỉ" value="" onfocus="if (this.value == ''){this.value='';}" onblur="if (this.value == '') {this.value='';}" />
+                    @Html.TextBoxFor(g => g.Ad);
+                </li>*@
+            <li style="display: none;">
+                <div class="imgcode">441195</div>
+            </li>
+        </div>
+        <div class="right">
+            <li class="mess">
+                @*<textarea name="noidung" cols="" rows="" placeholder="Nội dung" value="" onfocus="if (this.value == ''){this.value='';}" onblur="if (this.value == '') {this.value='';}"></textarea>*@
+                @Html.TextAreaFor(g => g.NoiDung, new { placeholder = "Nội dung" })
+            </li>
+            <li class="code">
+                <div class="left"><input name="mabaove" class="haimabaove" type="text" placeholder="Mã số" value="" onfocus="if (this.value == ''){this.value='';}" onblur="if (this.value == '') {this.value='';}" /></div><div class="imgcode">441195</div>
+            </li>
+            <div class="haibuttom">
+                <button class="btn btn-default" type="submit">Gửi đi</button>
+            </div>
+        </div>
+        <div class="clr"></div>
+    </div>
+
+    <style>
+        .formBox li {
+            display: block;
+            position: relative;
+            margin-bottom: 10px;
+            float: left;
+            width: 100%;
+        }
+    </style>
+}

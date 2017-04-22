@@ -1,0 +1,67 @@
+﻿@model WCF.BussinessObject.EntityObject.CTCoSoVatChatObject
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="content">
+
+    <div class="box-body">
+        @using (Html.BeginForm("Edit", "CTCoSoVatChat", FormMethod.Post, new { encType = "multipart/form-data" }))
+        {
+            <div class="box-header">
+                @Html.AntiForgeryToken()
+                <h4>Sửa <b>Chi tiết Cơ sở vật chất</b></h4>
+                @Html.ValidationSummary(true)
+                @Html.HiddenFor(d => d.ID)
+                @Html.HiddenFor(d => d.LinkImage)
+            </div>
+
+            List<SelectListItem> lstItem = new List<SelectListItem>();
+            var listCSVC = new WCF.BussinessControler.BCL.CoSoVatChatBCL().CoSoVatChat_GetAll();
+            if (listCSVC != null)
+            {
+                foreach (var item in listCSVC)
+                {
+                    lstItem.Add(new SelectListItem()
+                    {
+                        Text = item.GioiThieu.Substring(0, item.GioiThieu.Length > 30 ? 30 : item.GioiThieu.Length),
+                        Value = item.ID.ToString(),
+                        Selected = item.ID.Equals(Model.ID_CoSoVatChat)
+                    });
+                }
+            }
+            <div class="box-body">
+                <div class="form-group container-fluid">
+                    <label class="control-label" for="inputWarning">
+                        <i class="fa fa-bell-o"></i> @Html.DisplayNameFor(d => d.ID_CoSoVatChat)
+                    </label>
+                    @Html.DropDownListFor(d => d.ID_CoSoVatChat, lstItem, new { @class = "form-control", placeholder = "Enter ..." })
+                    @Html.ValidationMessageFor(d => d.ID_CoSoVatChat, "", new { @class = "alert-danger" })
+                </div>
+
+                <div class="form-group container-fluid">
+                    <label class="control-label" for="inputWarning">
+                        <i class="fa fa-bell-o"></i> @Html.DisplayNameFor(d => d.NoiDung)
+                    </label>
+                    @Html.TextAreaFor(d => d.NoiDung, new { @class = "form-control", placeholder = "Enter ..." })
+                    @Html.ValidationMessageFor(d => d.NoiDung, "", new { @class = "alert-danger" })
+                </div>
+
+                <div class="form-group container-fluid">
+                    <label class="control-label" for="inputWarning">
+                        <i class="fa fa-bell-o"></i>@Html.DisplayNameFor(d => d.LinkImage) <img src="@Model.LinkImage" alt="@Model.LinkImage" style="max-height:200px;max-width:600px;max-width:80%;" />
+                    </label>
+                    <input type="file" name="LinkImage" value=" " />
+                    @Html.ValidationMessageFor(d => d.LinkImage, "", new { @class = "alert-danger" })
+                </div>
+
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn btn-success" />
+                    @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary" })
+                </div>
+            </div>
+        }
+    </div>
+</div>

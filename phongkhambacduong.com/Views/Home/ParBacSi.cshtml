@@ -1,0 +1,20 @@
+﻿@model IEnumerable<WCF.BussinessObject.EntityObject.BacSiObject>
+
+@helper GetNamPhongBan(Guid id)
+{
+    string name = new WCF.BussinessControler.BCL.PhongBanBCL().PhongBan_GetByID(id).Name;
+    <span class="pos">@name</span>
+}
+
+@foreach (var item in Model)
+{
+    <div class="col-md-3 col-sm-6 col-xs-6  col-min-12">
+        <div class="team-member pDark">
+            <div class="member-img">
+                <img class="img-responsive" src="@item.LinkImage" alt="@item.Name">
+            </div>
+            <h4>@item.Name</h4>
+            @GetNamPhongBan((Guid)item.ID_PhongBan)
+        </div>
+    </div>
+}

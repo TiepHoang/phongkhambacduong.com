@@ -1,0 +1,11 @@
+F:\VS 2013\Project\phongkhambacduong.com\WCF.BussinessController\bin\Debug\WCF.BussinessController.dll
+F:\VS 2013\Project\phongkhambacduong.com\WCF.BussinessController\bin\Debug\WCF.BussinessController.pdb
+F:\VS 2013\Project\phongkhambacduong.com\WCF.BussinessController\bin\Debug\DataAccessLayer.dll
+F:\VS 2013\Project\phongkhambacduong.com\WCF.BussinessController\bin\Debug\WCF.BussinessObject.dll
+F:\VS 2013\Project\phongkhambacduong.com\WCF.BussinessController\bin\Debug\EntityFramework.dll
+F:\VS 2013\Project\phongkhambacduong.com\WCF.BussinessController\bin\Debug\DataAccessLayer.pdb
+F:\VS 2013\Project\phongkhambacduong.com\WCF.BussinessController\bin\Debug\WCF.BussinessObject.pdb
+F:\VS 2013\Project\phongkhambacduong.com\WCF.BussinessController\bin\Debug\EntityFramework.xml
+F:\VS 2013\Project\phongkhambacduong.com\WCF.BussinessController\obj\Debug\WCF.BussinessController.csprojResolveAssemblyReference.cache
+F:\VS 2013\Project\phongkhambacduong.com\WCF.BussinessController\obj\Debug\WCF.BussinessController.dll
+F:\VS 2013\Project\phongkhambacduong.com\WCF.BussinessController\obj\Debug\WCF.BussinessController.pdb

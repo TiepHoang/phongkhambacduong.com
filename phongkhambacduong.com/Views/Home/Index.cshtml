@@ -1,0 +1,160 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model WCF.BussinessObject.EntityObject.SloganObject
+
+<header class="header">
+    <div class="container">
+        <nav class="navbar navbar-inverse" role="navigation">
+            <div class="navbar-header">
+                <button type="button" id="nav-toggle" class="navbar-toggle" data-toggle="collapse" data-target="#main-nav"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+                <a href="http://demophongkham1.web30s.vn" class="navbar-brand scroll-top logo  animated bounceInLeft"><img alt='Phòng Khám Đa Khoa Thiên Hòa' class='img_logo' src='@Model.LogoPage'></a>
+            </div>
+            <div id="main-nav" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav" id="mainNav">
+                    @{Html.RenderAction("ParMenu");}
+                </ul>
+            </div>
+        </nav>
+    </div>
+</header>
+<div id="#top"></div>
+<article>
+    <section class="content gallery pad1" style='padding:0'>
+        <div class="midle_main_idclass fix1200_cus1">
+            <section id="home">
+                <div class="banner-container">
+                    <img src="@Model.ImagePage" alt="@Model.SloganPage" />
+                    <div class="container banner-content">
+                        <div class="hero-text animated fadeInDownBig">
+                            <h1 class="responsive-headline">@Model.SloganPage</h1>
+                            <a href="#basics" class="arrow-link"> <i class="fa fa-arrow-circle-down fa-2x"></i> </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div class="clear"></div>
+            <section id="services" class="page-section colord">
+                <div class="container">
+                    <div class="heading text-center">
+                        <h2>@Model.DichVu</h2>
+                        <p>@Model.Slogan_DichVu</p>
+                    </div>
+                    <div>
+                        @{Html.RenderAction("ParDichVu");}
+                    </div>
+                </div>
+            </section>
+            <section id="aboutUs">
+                <div class="container">
+                    <div class="heading text-center">
+                        <!-- Heading -->
+                        <h2>@Model.VeChungToi</h2>
+                        <p>@Model.Slogan_VeChungToi</p>
+                    </div>
+                    <div class="  feature design">
+                        <div class="six columns feature-media left">
+                            <img src="@Model.ImageGioiThieu" alt="Phòng khám đa khoa Thiên Hòa">
+                        </div>
+                        <div class="six columns right">
+                            <h3>@Model.nameContent_VeChungToi</h3>
+                            <div>
+                                @Model.Content_VeChungToi
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </section>
+            <section id="work" class="page-section page">
+                <div class="container text-center">
+                    <div class="heading">
+                        <h2>@Model.CSVC</h2>
+                        <p>@Model.Slogan_CSVC</p>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div id="portfolio">
+                                <ul class="items list-unstyled clearfix animated fadeInRight showing" data-animation="fadeInRight" style="position: relative;  ">
+                                    @{Html.RenderAction("ParCSVC");}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="team" class="page-section">
+                <div class="container">
+                    <div class="heading text-center">
+                        <h2>@Model.BacSi</h2>
+                        <p>@Model.Slogan_BacSi</p>
+                    </div>
+                    <div class="team-content">
+                        <div class="row">
+                            @{Html.RenderAction("ParBacSi");}
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="contactUs" class="contact-parlex" style="background-image: url('/datafiles/1/sub_banner/14819400566970_banner-bg-1.jpg');">
+                <div class="parlex-back">
+                    <div class="container">
+                        <div class="row">
+                            <div class="heading text-center">
+                                <h2>@Model.LienHe</h2>
+                                <p>@Model.Slogan_Lienhe</p>
+                            </div>
+                        </div>
+                        <div class="row mrgn30 dv-footer">
+                            <div class="col-sm-12 col-md-12">
+                                <div id="showText">
+                                    @{Html.RenderAction("ParDiaChi");}
+                                    <div class="contact">
+                                        @{Html.RenderAction("Contac");}
+                                    </div>
+
+                                    <div class="map">
+                                        <script src="//maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=AIzaSyAKUuXw8s42trJRIlpJkkc9204AfUxlhcI" type="text/javascript"></script>
+                                        <script type="text/javascript">
+                                            var toggleState = 1;
+                                            function initialize() {
+                                                if (GBrowserIsCompatible()) {
+                                                    var map = new GMap2(document.getElementById("map_canvas"));
+                                                    map.setCenter(new GLatLng(10.791633, 106.702628), 15);
+                                                    var bounds = map.getBounds();
+                                                    var point = new GLatLng(10.791633, 106.702628);
+                                                    map.addOverlay(new GMarker(point));
+                                                    map.setUIToDefault();
+                                                    map.openInfoWindowHtml(map.getCenter(), "<img src='/datafiles/1/baiviet/thumb_14818824944091_logo.png' width='100' align='left'><strong>Phòng Khám Đa Khoa Thiên Hòa</strong> <br> : 254A Nguyễn Đình Chiểu - Q3 - TpHCM <br> Phone: 1900 585 895 (24/7)<br> Email: admin@demophongkham1.vn");
+                                                }
+                                            }
+                                        </script>
+
+                                        <script>
+                                            $(document).ready(function () {
+                                                initialize();
+                                            })
+                                        </script>
+                                        <div id='map_canvas' style='width:100%; height:500px; color:#000;'></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="clear"></div>
+                            <div class="container">
+                                <div class="social text-center">
+                                    <a href="https://twitter.com/wwwpavietnamcom" target="_blank"><i class="fa fa-twitter"></i></a>
+                                    <a href="https://www.facebook.com/www.pavietnam.net" target="_blank"><i class="fa fa-facebook"></i></a>
+                                    <a href="https://plus.google.com/114627120430815730885/posts" target="_blank"><i class="fa fa-dribbble"></i></a>
+                                    <a href="https://plus.google.com/114627120430815730885/posts" target="_blank"><i class="fa fa-flickr"></i></a>
+                                    <a href="https://www.youtube.com/channel/UC2CD0jJ4HZLCZReyCyzwp0g" target="_blank"><i class="fa fa-github"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </section>
+</article>

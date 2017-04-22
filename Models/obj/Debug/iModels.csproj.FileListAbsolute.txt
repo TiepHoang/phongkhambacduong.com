@@ -1,0 +1,10 @@
+F:\VS 2013\Project\phongkhambacduong.com\Models\bin\Debug\Models.dll.config
+F:\VS 2013\Project\phongkhambacduong.com\Models\bin\Debug\Models.dll
+F:\VS 2013\Project\phongkhambacduong.com\Models\bin\Debug\Models.pdb
+F:\VS 2013\Project\phongkhambacduong.com\Models\bin\Debug\EntityFramework.dll
+F:\VS 2013\Project\phongkhambacduong.com\Models\bin\Debug\EntityFramework.SqlServer.dll
+F:\VS 2013\Project\phongkhambacduong.com\Models\bin\Debug\EntityFramework.xml
+F:\VS 2013\Project\phongkhambacduong.com\Models\bin\Debug\EntityFramework.SqlServer.xml
+F:\VS 2013\Project\phongkhambacduong.com\Models\obj\Debug\iModels.csprojResolveAssemblyReference.cache
+F:\VS 2013\Project\phongkhambacduong.com\Models\obj\Debug\Models.dll
+F:\VS 2013\Project\phongkhambacduong.com\Models\obj\Debug\Models.pdb

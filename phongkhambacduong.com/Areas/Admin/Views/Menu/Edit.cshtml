@@ -1,0 +1,54 @@
+﻿@model WCF.BussinessObject.EntityObject.MenuObject
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="content">
+    <div class="box">
+        @using (Html.BeginForm("Edit", "Menu", FormMethod.Post, new { encType = "multipart/form-data" }))
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="box-header">
+                <h4>Chỉnh sửa <b>Menu</b></h4>
+            </div>
+            <div class="box-body">
+                @Html.ValidationSummary(true)
+                @Html.HiddenFor(model => model.ID)
+                <div class="form-group container-fluid">
+                    <label class="control-label" for="inputWarning">
+                        <i class="fa fa-bell-o"></i>
+                        @Html.LabelFor(model => model.Neo)
+                    </label>
+                    @Html.TextBoxFor(model => model.Neo, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Neo, "", new { @class = "alert-danger" })
+                </div>
+
+                <div class="form-group container-fluid">
+                    <label class="control-label">
+                        <i class="fa fa-barcode"></i>
+                        @Html.LabelFor(model => model.Rank)
+                    </label>
+                    @Html.TextBoxFor(model => model.Rank, new { @class = "form-control", type = "number" })
+                    @Html.ValidationMessageFor(model => model.Rank, "", new { @class = "alert-danger" })
+                </div>
+
+                <div class="form-group container-fluid">
+                    <label class="control-label">
+                        <i class="fa fa-barcode"></i>
+                        @Html.LabelFor(model => model.Display)
+                    </label>
+                    @Html.TextBoxFor(model => model.Display, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Display, "", new { @class = "alert-danger" })
+                </div>
+
+                <div class="form-group container-fluid">
+                        <input type="submit" value="Save" class="btn btn-success" />
+                        @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary" })
+                </div>
+            </div>
+        }
+    </div>
+</div>

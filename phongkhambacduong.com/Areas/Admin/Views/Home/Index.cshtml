@@ -1,0 +1,86 @@
+﻿@model IEnumerable<WCF.BussinessObject.EntityObject.GopYObject>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+<link rel="stylesheet" href="~/Areas/Admin/Content/plugins/datatables/dataTables.bootstrap.css">
+<!-- DataTables -->
+<script src="~/Areas/Admin/Content/plugins/datatables/jquery.dataTables.min.js"></script>
+<!-- Main content -->
+<section class="content">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box">
+                <div class="box-header">
+                    <h3 class="box-title">Các góp ý của khách hàng gần đây</h3>
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body">
+                    <table id="example1" class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th>@Html.DisplayNameFor(d => d.ThoiGian)</th>
+                                <th>@Html.DisplayNameFor(d => d.HoTen)</th>
+                                <th>@Html.DisplayNameFor(d => d.Email)</th>
+                                <th>@Html.DisplayNameFor(d => d.DienThoai)</th>
+                                <th>@Html.DisplayNameFor(d => d.NoiDung)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>@Html.DisplayFor(d => item.ThoiGian)</td>
+                                    <td>@Html.DisplayFor(d => item.HoTen)</td>
+                                    <td>@Html.DisplayFor(d => item.Email)</td>
+                                    <td>@Html.DisplayFor(d => item.DienThoai)</td>
+                                    <td>@Html.DisplayFor(d => item.NoiDung)</td>
+                                </tr>
+                            }
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <th>@Html.DisplayNameFor(d => d.ThoiGian)</th>
+                                <th>@Html.DisplayNameFor(d => d.HoTen)</th>
+                                <th>@Html.DisplayNameFor(d => d.Email)</th>
+                                <th>@Html.DisplayNameFor(d => d.DienThoai)</th>
+                                <th>@Html.DisplayNameFor(d => d.NoiDung)</th>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+                <!-- /.box-body -->
+            </div>
+            <!-- /.box -->
+        </div>
+        <!-- /.col -->
+    </div>
+    <!-- /.row -->
+</section>
+<!-- /.content -->
+<div class="control-sidebar-bg"></div>
+
+<script src="~/Areas/Admin/Content/plugins/datatables/dataTables.bootstrap.min.js"></script>
+<!-- SlimScroll -->
+<script src="~/Areas/Admin/Content/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+<!-- FastClick -->
+<script src="~/Areas/Admin/Content/plugins/fastclick/fastclick.js"></script>
+<!-- AdminLTE App -->
+<script src="~/Areas/Admin/Content/dist/js/app.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="~/Areas/Admin/Content/dist/js/demo.js"></script>
+<!-- page script -->
+<script>
+    $(function () {
+        $("#example1").DataTable();
+        $('#example2').DataTable({
+            "paging": true,
+            "lengthChange": false,
+            "searching": false,
+            "ordering": true,
+            "info": true,
+            "autoWidth": false
+        });
+    });
+</script>

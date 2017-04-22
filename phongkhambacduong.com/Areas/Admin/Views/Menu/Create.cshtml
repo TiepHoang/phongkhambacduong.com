@@ -1,0 +1,51 @@
+﻿@model WCF.BussinessObject.EntityObject.MenuObject
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+<section class="content">
+    <div class="box">
+        @using (Html.BeginForm("Create", "Menu", FormMethod.Post, new { encType = "multipart/form-data" }))
+        {
+            <div class="box-header">
+
+                @Html.AntiForgeryToken()
+                <h4>Thêm mới <b>Menu</b></h4>
+            </div>
+            <div class="box-body">
+
+                @Html.ValidationSummary(true)
+
+                <div class="form-group container-fluid">
+                    <label class="control-label" for="inputWarning">
+                        <i class="fa fa-bell-o"></i> @Html.DisplayNameFor(d => d.Neo)
+                    </label>
+                    @Html.TextBoxFor(d => d.Neo, new { @class = "form-control", placeholder = "Enter ..." })
+                    @Html.ValidationMessageFor(d => d.Neo, "", new { @class = "alert-danger" })
+                </div>
+
+                <div class="form-group container-fluid">
+                    <label class="control-label" for="inputWarning">
+                        <i class="fa fa-bell-o"></i> @Html.DisplayNameFor(d => d.Rank)
+                    </label>
+                    @Html.TextBoxFor(d => d.Rank, new { @class = "form-control", placeholder = "Enter ...", type = "number" })
+                    @Html.ValidationMessageFor(d => d.Rank, "", new { @class = "alert-danger" })
+                </div>
+
+                <div class="form-group container-fluid">
+                    <label class="control-label" for="inputWarning">
+                        <i class="fa fa-bell-o"></i> @Html.DisplayNameFor(d => d.Display)
+                    </label>
+                    @Html.TextBoxFor(d => d.Display, new { @class = "form-control", placeholder = "Enter ..." })
+                    @Html.ValidationMessageFor(d => d.Display, "", new { @class = "alert-danger" })
+                </div>
+
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn btn-success" />
+                    @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary" })
+                </div>
+            </div>
+        }
+    </div>
+</section>

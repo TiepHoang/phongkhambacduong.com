@@ -1,0 +1,86 @@
+﻿@model WCF.BussinessObject.EntityObject.BacSiObject
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+@helper ListItemPhongBan()
+{
+    List<SelectListItem> lst = new List<SelectListItem>();
+    var list = new WCF.BussinessControler.BCL.PhongBanBCL().PhongBan_GetAll();
+    if (list != null && list.Count > 0)
+    {
+        foreach (var item in list)
+        {
+            lst.Add(new SelectListItem()
+            {
+                Text = item.Name,
+                Value = item.ID.ToString(),
+                Selected = Model.ID_PhongBan.Equals(item.ID)
+            });
+        }
+        @Html.DropDownListFor(d => d.ID_PhongBan, lst, new { @class = "selectpicker" })
+    }
+    else
+    {
+        <div class="alert alert-danger">
+            <span>Chưa tồn tại phòng ban, hãy @Html.ActionLink("Create", "PhongBan", null, new { @class = "btn btn-primary" })</span>
+        </div>
+    }
+}
+
+<section class="content">
+    <div class="box">
+        @using (Html.BeginForm("Edit", "BacSi", FormMethod.Post, new { encType = "multipart/form-data" }))
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="">
+                <div class="box-header">
+                    <h4>Chỉnh sửa <b>Bác sĩ</b></h4>
+                </div>
+                @Html.ValidationSummary(true)
+                @Html.HiddenFor(model => model.ID)
+                @Html.HiddenFor(model => model.LinkImage)
+
+                <div class="box-body">
+                    <div class="form-group container-fluid">
+                        <label class="control-label" for="inputWarning">
+                            <i class="fa fa-bell-o"></i>
+                            @Html.LabelFor(model => model.Name)
+                        </label>
+                        @Html.TextBoxFor(model => model.Name, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.Name, "", new { @class = "alert-danger" })
+                    </div>
+
+                    <div class="form-group container-fluid">
+                        <label class="control-label">
+                            <i class="fa fa-barcode"></i>
+                            Chức vụ
+                        </label>
+                        @ListItemPhongBan()
+                        @Html.ValidationMessageFor(model => model.ID_PhongBan, "", new { @class = "alert-danger" })
+                    </div>
+
+                    <div class="form-group container-fluid">
+                        <label class="control-label">
+                            <i class="fa fa-barcode"></i>
+                            @Html.LabelFor(model => model.LinkImage)
+                        </label>
+                        <img src="@Model.LinkImage" style="height:200px; max-width: 80%" alt="Alternate Text" />
+                        <input class="form-control" type="file" name="LinkImage" value=" " />
+                        @Html.ValidationMessageFor(model => model.LinkImage, "", new { @class = "alert-danger" })
+                    </div>
+
+                    <div class="form-group container-fluid">
+                        <div>
+                            <input type="submit" value="Save" class="btn btn-success" />
+                            @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-info" })
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</section>

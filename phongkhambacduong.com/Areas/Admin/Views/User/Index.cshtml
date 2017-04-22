@@ -1,0 +1,59 @@
+﻿@using phongkhambacduong.com.Areas.Admin.Models
+
+@model UserObject
+
+@{
+    Layout = null;
+    ViewBag.Title = "Login";
+
+    var user = new UserModel().GetUserObjectInCookie();
+    string username = "", password = "";
+    if (user != null)
+    {
+        username = user.Username;
+        password = user.Password;
+    }
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+    <script src="~/js/jquery-1.8.2.min.js"></script>
+    <link href="~/Areas/Admin/Content/bootstrap/css/bootstrap-theme.css" rel="stylesheet" />
+    <link href="~/Areas/Admin/Content/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="~/Areas/Admin/Content/bootstrap/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div>
+        <!--
+        you can substitue the span of reauth email for a input with the email and
+        include the remember me checkbox
+        -->
+        <div class="container">
+            <div class="card card-container">
+                <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
+                @Html.ValidationSummary("", new { @class = "alert-danger" })
+                @using (Html.BeginForm())
+                {
+                    <span id="reauth-email" class="reauth-email"></span>
+                    @Html.TextBoxFor(d => d.Username, new { @class = "form-control", placeholder = "Tên đăng nhập", @Value = username, required = true })
+                    @Html.PasswordFor(d => d.Password, new { @class = "form-control", placeholder = "Mật khẩu", type = "password", required = true, value = password })
+                    <div class="checkbox">
+                        <label>
+                            @Html.CheckBoxFor(d => d.Remember) Remember me
+                        </label>
+                    </div>
+                    <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Sign in</button>
+                }
+                <a href="#" class="forgot-password">
+                    Forgot the password?
+                </a>
+            </div><!-- /card-container -->
+        </div><!-- /container -->
+    </div>
+    <link href="~/Areas/Admin/Content/css/userLogin.css" rel="stylesheet" />
+    <script src="~/Areas/Admin/Content/js/userLogin.js"></script>
+</body>
+</html>

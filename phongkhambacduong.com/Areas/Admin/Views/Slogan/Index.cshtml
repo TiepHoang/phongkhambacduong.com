@@ -1,0 +1,229 @@
+﻿@model WCF.BussinessObject.EntityObject.SloganObject
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+@using phongkhambacduong.com.Helper
+
+<section class="content">
+    <div class="box">
+        @using (Html.BeginForm("Index", "Slogan", FormMethod.Post, new { encType = "multipart/form-data" }))
+        {
+            <div class="box-header">
+                <h4>Chỉnh sửa <b>Thông tin chung của Page</b></h4>
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true)
+                @Html.HiddenFor(model => model.ID)
+                @Html.HiddenFor(model => model.ImageGioiThieu)
+                @Html.HiddenFor(model => model.ImagePage)
+                @Html.HiddenFor(model => model.LogoPage)
+                @Html.ValidationMessage("Result")
+            </div>
+            <div class="box-body">
+                <div class="form-group">
+                    <label class="control-label" for="inputWarning">
+                        <i class="fa fa-bell-o"></i>
+                        @Html.LabelFor(model => model.BacSi)
+                    </label>
+                    @Html.TextBoxFor(model => model.BacSi, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.BacSi, "", new { @class = "alert-danger" })
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label">
+                        <i class="fa fa-barcode"></i>
+                        @Html.LabelFor(model => model.Slogan_BacSi)
+                    </label>
+                    @Html.TextAreaFor(model => model.Slogan_BacSi, new { @class = "form-control  ckeditor" })
+                    @Html.ValidationMessageFor(model => model.Slogan_BacSi, "", new { @class = "alert-danger" })
+                </div>
+
+                <hr />
+
+                <div class="form-group">
+                    <label class="control-label">
+                        <i class="fa fa-barcode"></i>
+                        @Html.LabelFor(model => model.CSVC)
+                    </label>
+                    @Html.TextBoxFor(model => model.CSVC, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.CSVC, "", new { @class = "alert-danger" })
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label" for="inputWarning">
+                        <i class="fa fa-bell-o"></i>
+                        @Html.LabelFor(model => model.Slogan_CSVC)
+                    </label>
+                    @Html.TextAreaFor(model => model.Slogan_CSVC, new { @class = "form-control ckeditor" })
+                    @Html.ValidationMessageFor(model => model.Slogan_CSVC, "", new { @class = "alert-danger" })
+                </div>
+
+                <hr />
+
+                <div class="form-group">
+                    <label class="control-label" for="inputWarning">
+                        <i class="fa fa-bell-o"></i>
+                        @Html.LabelFor(model => model.DichVu)
+                    </label>
+                    @Html.TextBoxFor(model => model.DichVu, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.DichVu, "", new { @class = "alert-danger" })
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label" for="inputWarning">
+                        <i class="fa fa-bell-o"></i>
+                        @Html.LabelFor(model => model.Slogan_DichVu)
+                    </label>
+                    @Html.TextAreaFor(model => model.Slogan_DichVu, new { @class = "form-control ckeditor" })
+                    @Html.ValidationMessageFor(model => model.Slogan_DichVu, "", new { @class = "alert-danger" })
+                </div>
+
+                <hr />
+
+                <div class="form-group">
+                    <label class="control-label" for="inputWarning">
+                        <i class="fa fa-bell-o"></i>
+                        @Html.LabelFor(model => model.GioiThieu)
+                    </label>
+                    @Html.TextBoxFor(model => model.GioiThieu, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.GioiThieu, "", new { @class = "alert-danger" })
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label" for="inputWarning">
+                        <i class="fa fa-bell-o"></i>
+                        @Html.LabelFor(model => model.ImageGioiThieu)
+                        <img src="@Model.ImageGioiThieu" alt="@Model.ImagePage" style="max-height:100px;max-width:100px" />
+                    </label>
+                    <input type="file" name="ImageGioiThieu" value=" " />
+                    @Html.ValidationMessageFor(model => model.ImageGioiThieu, "", new { @class = "alert-danger" })
+                </div>
+
+                <hr />
+
+                <div class="form-group">
+                    <label class="control-label" for="inputWarning">
+                        <i class="fa fa-bell-o"></i>
+                        @Html.LabelFor(model => model.ImagePage)
+                        <img src="@Model.ImagePage" alt="@Model.ImagePage" style="max-height:100px;max-width:100px" />
+                    </label>
+                    <input type="file" name="ImagePage" value=" " />
+                    @Html.ValidationMessageFor(model => model.ImagePage, "", new { @class = "alert-danger" })
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label" for="inputWarning">
+                        <i class="fa fa-bell-o"></i>
+                        @Html.LabelFor(model => model.LogoPage)
+                        <img src="@Model.LogoPage" alt="@Model.ImagePage" style="max-height:100px;max-width:100px" />
+                    </label>
+                    <input type="file" name="ImagePage" value=" " />
+                    @Html.ValidationMessageFor(model => model.LogoPage, "", new { @class = "alert-danger" })
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label" for="inputWarning">
+                        <i class="fa fa-bell-o"></i>
+                        @Html.LabelFor(model => model.SloganPage)
+                    </label>
+                    @Html.TextAreaFor(model => model.SloganPage, new { @class = "form-control ckeditor" })
+                    @Html.ValidationMessageFor(model => model.SloganPage, "", new { @class = "alert-danger" })
+                </div>
+
+                <hr />
+
+                <div class="form-group">
+                    <label class="control-label" for="inputWarning">
+                        <i class="fa fa-bell-o"></i>
+                        @Html.LabelFor(model => model.LienHe)
+                    </label>
+                    @Html.TextBoxFor(model => model.LienHe, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.LienHe, "", new { @class = "alert-danger" })
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label" for="inputWarning">
+                        <i class="fa fa-bell-o"></i>
+                        @Html.LabelFor(model => model.Slogan_Lienhe)
+                    </label>
+                    @Html.TextAreaFor(model => model.Slogan_Lienhe, new { @class = "form-control ckeditor" })
+                    @Html.ValidationMessageFor(model => model.Slogan_Lienhe, "", new { @class = "alert-danger" })
+                </div>
+
+                <hr />
+
+                <div class="form-group">
+                    <label class="control-label" for="inputWarning">
+                        <i class="fa fa-bell-o"></i>
+                        @Html.LabelFor(model => model.nameContent_VeChungToi)
+                    </label>
+                    @Html.TextBoxFor(model => model.nameContent_VeChungToi, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.nameContent_VeChungToi, "", new { @class = "alert-danger" })
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label" for="inputWarning">
+                        <i class="fa fa-bell-o"></i>
+                        @Html.LabelFor(model => model.Content_VeChungToi)
+                    </label>
+                    @Html.TextAreaFor(model => model.Content_VeChungToi, new { @class = "form-control ckeditor" })
+                    @Html.ValidationMessageFor(model => model.Content_VeChungToi, "", new { @class = "alert-danger" })
+                </div>
+
+                <hr />
+
+                <div class="form-group">
+                    <label class="control-label" for="inputWarning">
+                        <i class="fa fa-bell-o"></i>
+                        @Html.LabelFor(model => model.VeChungToi)
+                    </label>
+                    @Html.TextBoxFor(model => model.VeChungToi, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.VeChungToi, "", new { @class = "alert-danger" })
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label" for="inputWarning">
+                        <i class="fa fa-bell-o"></i>
+                        @Html.LabelFor(model => model.Slogan_VeChungToi)
+                    </label>
+                    @Html.TextAreaFor(model => model.Slogan_VeChungToi, new { @class = "form-control ckeditor" })
+                    @Html.ValidationMessageFor(model => model.Slogan_VeChungToi, "", new { @class = "alert-danger" })
+                </div>
+
+                <div class="form-group">
+                    <input type="submit" value="Save" class="btn btn-success" />
+                </div>
+            </div>
+        }
+    </div>
+</section> 
+<input id="anhbia" name="anhbia" type="text" /><input id="chonanhbia" type="button"
+                                                      value="Chon anh" />
+<br />
+<textarea id="TextArea1" cols="20" rows="2"></textarea>
+<script language="javascript" type="text/javascript">
+
+    $(function () {
+        $("#chonanhbia").click(function () {
+            var finder = new CKFinder();
+            finder.selectActionFunction = function (fileUrl) {
+                $("#anhbia").val(fileUrl);
+            };
+            finder.popup();
+        });
+    });
+</script>
+<script type="text/javascript">
+    var editor;
+    function createEditor(languageCode, id) {
+        var editor = CKEDITOR.replace(id, {
+            language: languageCode
+        });
+    }
+
+    $(function () {
+        createEditor('vi', 'TextArea1');
+    });
+</script>

@@ -1,0 +1,76 @@
+﻿@model WCF.BussinessObject.EntityObject.BacSiObject
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+@helper ListItemPhongBan()
+{
+    List<SelectListItem> lst = new List<SelectListItem>();
+    var list = new WCF.BussinessControler.BCL.PhongBanBCL().PhongBan_GetAll();
+    if (list != null && list.Count > 0)
+    {
+        foreach (var item in list)
+        {
+            lst.Add(new SelectListItem()
+            {
+                Text = item.Name,
+                Value = item.ID.ToString()
+            });
+        }
+        @Html.DropDownListFor(d => d.ID_PhongBan, lst, new { @class = "selectpicker" })
+    }
+    else
+    {
+        <div class="alert-danger" style="padding: 5px">
+            <span>Chưa tồn tại phòng ban, hãy @Html.ActionLink("Thêm mới", "Create", "PhongBan", null, new { @class = "btn btn-primary" })</span>
+        </div>
+    }
+}
+
+<section class="content">
+    <div class="box">
+        @using (Html.BeginForm("Create", "BacSi", FormMethod.Post, new { encType = "multipart/form-data" }))
+        {
+            <div class="box-header">
+                @Html.AntiForgeryToken()
+                <h3>Thêm mới <b>@Html.ActionLink("Bác sĩ","Index")</b></h3>
+                @Html.ValidationSummary(true, "")
+            </div>
+
+            <div class="box-body">
+                <div class="form-group container-fluid">
+                    <label class="control-label" for="inputWarning">
+                        <i class="fa fa-bell-o"></i> @Html.DisplayNameFor(d => d.Name)
+                    </label>
+                    @Html.TextBoxFor(d => d.Name, new { @class = "form-control", placeholder = "Enter ..." })
+                    @Html.ValidationMessageFor(d => d.Name, "", new { @class = "alert-danger" })
+                </div>
+
+                <div class="form-group container-fluid">
+                    <label class="control-label" for="inputWarning">
+                        <i class="fa fa-bell-o"></i> @Html.DisplayNameFor(d => d.ID_PhongBan)
+                    </label>
+                    @ListItemPhongBan()
+                    @Html.ValidationMessageFor(d => d.ID_PhongBan, "", new { @class = "alert-danger" })
+                </div>
+
+                <div class="form-group container-fluid">
+                    <label class="control-label" for="inputWarning">
+                        <i class="fa fa-bell-o"></i> @Html.DisplayNameFor(d => d.LinkImage)
+                    </label>
+                    <input type="file" name="LinkImage" value=" " />
+                    @Html.ValidationMessageFor(d => d.LinkImage, "", new { @class = "alert-danger" })
+                </div>
+
+                <div class="form-group container-fluid">
+                    <div>
+                        <input type="submit" class="btn btn-success" value="Create" />
+                        @Html.ActionLink("Quay lại quản lý", "Index", null, new { @class = "btn btn-default" })
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</section>

@@ -1,0 +1,20 @@
+﻿@model IEnumerable<WCF.BussinessObject.EntityObject.CoSoVatChatObject>
+
+
+@foreach (var item in Model)
+{
+    <li class='item branding'>
+        <a data='@item.hrefAjax' class='fancybox SHOW_popup'>
+            <img src='@item.LinkImage' alt=''>
+            <div class='overlay'>
+                <div class='dv-table'>
+                    <div class='dv-table-cell'>
+                        <span>@item.GioiThieu</span>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </li>
+}
+
+

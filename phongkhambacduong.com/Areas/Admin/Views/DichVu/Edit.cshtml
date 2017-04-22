@@ -1,0 +1,66 @@
+﻿@model WCF.BussinessObject.EntityObject.DichVuObject
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+<section class="content">
+
+    <div class="box">
+
+        @using (Html.BeginForm("Edit", "DichVu", FormMethod.Post, new { encType = "multipart/form-data" }))
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="box-header">
+                <h4>Chỉnh sửa <b>Địa chỉ</b></h4>
+                @Html.ValidationSummary(true)
+                @Html.HiddenFor(model => model.ID)
+                @Html.HiddenFor(model => model.Icon)
+            </div>
+            <div class="box-body">
+                <div class="form-group container-fluid">
+                    <label class="control-label" for="inputWarning">
+                        <i class="fa fa-bell-o"></i>
+                        @Html.LabelFor(model => model.Name)
+                    </label>
+                    @Html.TextBoxFor(model => model.Name, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Name, "", new { @class = "alert-danger" })
+                </div>
+
+                <div class="form-group container-fluid">
+                    <label class="control-label">
+                        <i class="fa fa-barcode"></i>
+                        @Html.LabelFor(model => model.hrefAjax)
+                    </label>
+                    @Html.TextBoxFor(model => model.hrefAjax, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.hrefAjax, "", new { @class = "alert-danger" })
+                </div>
+
+                <div class="form-group container-fluid">
+                    <label class="control-label">
+                        <i class="fa fa-barcode"></i>
+                        @Html.LabelFor(model => model.GioiThieu)
+                    </label>
+                    @Html.TextAreaFor(model => model.GioiThieu, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.GioiThieu, "", new { @class = "alert-danger" })
+                </div>
+
+                <div class="form-group container-fluid">
+                    <label class="control-label">
+                        <i class="fa fa-barcode"></i>
+                        @Html.LabelFor(model => model.Icon)
+                        <img src="@Model.Icon" style="max-height:200px;max-width:80%" alt="@Model.Icon" />
+                    </label>
+                    <input type="file" name="Icon" value=" " />
+                    @Html.ValidationMessageFor(model => model.Icon, "", new { @class = "alert-danger" })
+                </div>
+
+                <div class="form-group container-fluid">
+                    <input type="submit" value="Save" class="btn btn-success" />
+                    @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary" })
+                </div>
+            </div>
+        }
+    </div>
+</section>

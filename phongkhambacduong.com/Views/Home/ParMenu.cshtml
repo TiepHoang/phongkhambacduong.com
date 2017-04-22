@@ -1,0 +1,8 @@
+﻿@model List<WCF.BussinessObject.EntityObject.MenuObject>
+
+@foreach (var item in Model)
+{
+    <li class=" active" id="firstLink">
+        <a href="#@item.Neo" class="scroll-link">@item.Display</a>
+    </li>
+}

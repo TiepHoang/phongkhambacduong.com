@@ -1,0 +1,4 @@
+F:\VS 2013\Project\phongkhambacduong.com\WCF.BussinessObject\bin\Debug\WCF.BussinessObject.dll
+F:\VS 2013\Project\phongkhambacduong.com\WCF.BussinessObject\bin\Debug\WCF.BussinessObject.pdb
+F:\VS 2013\Project\phongkhambacduong.com\WCF.BussinessObject\obj\Debug\WCF.BussinessObject.dll
+F:\VS 2013\Project\phongkhambacduong.com\WCF.BussinessObject\obj\Debug\WCF.BussinessObject.pdb

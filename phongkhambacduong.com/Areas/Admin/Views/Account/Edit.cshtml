@@ -1,0 +1,147 @@
+﻿@model WCF.BussinessObject.EntityObject.AccountObject
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+@helper GetDropDownListPosition()
+{
+    List<SelectListItem> lst = new List<SelectListItem>();
+    var list = new WCF.BussinessControler.BCL.PositionBCL().Position_GetAll();
+    if (list == null || list.Count <= 0)
+    {
+        <div class="alert alert-danger" style="padding:5px;">
+            Không tồn tại chức vụ, hãy @Html.ActionLink("Thêm mới", "Create", null, new { @class = "btn btn-success" })
+        </div>
+    }
+    else
+    {
+        foreach (var item in list)
+        {
+            lst.Add(new SelectListItem()
+            {
+                Value = item.ID.ToString(),
+                Text = item.Name
+            });
+        }
+        @Html.DropDownListFor(d => d.ID_Position, lst, new { @class = "form-control" })
+    }
+}
+
+<div class="content">
+    <div class="box">
+        @using (Html.BeginForm("Edit", "Account", FormMethod.Post, new { encType = "multipart/form-data" }))
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="box-header">
+                <h4>Sửa <b>Tài khoản</b></h4>
+            </div>
+            <div class="box-body">
+                @Html.ValidationSummary(true)
+                @Html.HiddenFor(d => d.Username)
+                @Html.HiddenFor(d => d.Password)
+
+                <div class="form-group container-fluid">
+                    <label class="control-label">
+                        <i class="fa fa-barcode"></i>
+                        @Html.LabelFor(model => model.Password)
+                    </label>
+                    @Html.PasswordFor(model => model.Password, new { @class = "form-control", id = "Password" })
+                    @Html.ValidationMessageFor(model => model.Password, "", new { @class = "alert-danger", type = "password" })
+                </div>
+
+                <div class="form-group container-fluid">
+                    <label class="control-label">
+                        <i class="fa fa-barcode"></i>
+                        Nhập lại mật khẩu
+                    </label>
+                    @Html.Password("rePassword", null, new { @class = "form-control", id = "rePassword" })
+                    @Html.ValidationMessage("messageRePassword", "", new { @class = "alert-danger", type = "password" })
+                </div>
+
+                <div class="form-group container-fluid">
+                    <label class="control-label" for="inputWarning">
+                        <i class="fa fa-bell-o"></i>
+                        @Html.DisplayNameFor(d => d.Avatar)
+                    </label>
+                    <input type="file" name="Avatar" />
+                    @Html.ValidationMessageFor(model => model.Avatar, "", new { @class = "alert-danger" })
+                </div>
+
+                <div class="form-group container-fluid">
+                    <label class="control-label">
+                        <i class="fa fa-barcode"></i>
+                        @Html.LabelFor(model => model.Name)
+                    </label>
+                    @Html.TextBoxFor(model => model.Name, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Name, "", new { @class = "alert-danger" })
+                </div>
+
+                <div class="form-group container-fluid">
+                    <label class="control-label">
+                        <i class="fa fa-barcode"></i>
+                        @Html.LabelFor(model => model.Birthday)
+                    </label>
+                    @Html.TextBoxFor(model => model.Birthday, new { @class = "form-control", type = "date" })
+                    @Html.ValidationMessageFor(model => model.Birthday, "", new { @class = "alert-danger" })
+                </div>
+
+                <div class="form-group container-fluid">
+                    <label class="control-label">
+                        <i class="fa fa-barcode"></i>
+                        @Html.LabelFor(model => model.Email)
+                    </label>
+                    @Html.TextBoxFor(model => model.Email, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "alert-danger" })
+                </div>
+
+                <div class="form-group container-fluid">
+                    <label class="control-label">
+                        <i class="fa fa-barcode"></i>
+                        @Html.LabelFor(model => model.Adress)
+                    </label>
+                    @Html.TextBoxFor(model => model.Adress, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Adress, "", new { @class = "alert-danger" })
+                </div>
+
+                <div class="form-group container-fluid">
+                    <label class="control-label">
+                        <i class="fa fa-barcode"></i>
+                        @Html.LabelFor(model => model.Phone)
+                    </label>
+                    @Html.TextBoxFor(model => model.Phone, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Phone, "", new { @class = "alert-danger" })
+                </div>
+
+                <div class="form-group container-fluid">
+                    <label class="control-label">
+                        <i class="fa fa-barcode"></i>
+                        @Html.LabelFor(model => model.ID_Position)
+                    </label>
+                    @GetDropDownListPosition()
+                    @Html.ValidationMessageFor(model => model.ID_Position, "", new { @class = "alert-danger" })
+                </div>
+
+                <div class="form-group container-fluid">
+                    <label class="control-label">
+                        <i class="fa fa-barcode"></i>
+                        @Html.LabelFor(model => model.Sex)
+                    </label>
+                    <div>
+                        @Html.RadioButtonFor(model => model.Sex, true, new { id = "Male" }) <label for="Male">Nam</label>
+                        <br />
+                        @Html.RadioButtonFor(model => model.Sex, false, new { id = "FeMale" }) <label for="FeMale">Nữ</label>
+                    </div>
+                    @Html.ValidationMessageFor(model => model.Sex, "", new { @class = "alert-danger" })
+                </div>
+
+                <div class="form-group container-fluid">
+                    <input type="submit" value="Save" class="btn btn-success" />
+                    @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary" })
+                </div>
+            </div>
+        }
+    </div>
+</div>

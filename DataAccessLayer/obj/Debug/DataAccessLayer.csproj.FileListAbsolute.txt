@@ -1,0 +1,12 @@
+F:\VS 2013\Project\phongkhambacduong.com\DataAccessLayer\bin\Debug\DataAccessLayer.dll.config
+F:\VS 2013\Project\phongkhambacduong.com\DataAccessLayer\bin\Debug\DataAccessLayer.dll
+F:\VS 2013\Project\phongkhambacduong.com\DataAccessLayer\bin\Debug\DataAccessLayer.pdb
+F:\VS 2013\Project\phongkhambacduong.com\DataAccessLayer\bin\Debug\EntityFramework.dll
+F:\VS 2013\Project\phongkhambacduong.com\DataAccessLayer\bin\Debug\EntityFramework.SqlServer.dll
+F:\VS 2013\Project\phongkhambacduong.com\DataAccessLayer\bin\Debug\WCF.BussinessObject.dll
+F:\VS 2013\Project\phongkhambacduong.com\DataAccessLayer\bin\Debug\WCF.BussinessObject.pdb
+F:\VS 2013\Project\phongkhambacduong.com\DataAccessLayer\bin\Debug\EntityFramework.xml
+F:\VS 2013\Project\phongkhambacduong.com\DataAccessLayer\bin\Debug\EntityFramework.SqlServer.xml
+F:\VS 2013\Project\phongkhambacduong.com\DataAccessLayer\obj\Debug\DataAccessLayer.csprojResolveAssemblyReference.cache
+F:\VS 2013\Project\phongkhambacduong.com\DataAccessLayer\obj\Debug\DataAccessLayer.dll
+F:\VS 2013\Project\phongkhambacduong.com\DataAccessLayer\obj\Debug\DataAccessLayer.pdb

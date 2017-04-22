@@ -1,0 +1,12 @@
+﻿@model IEnumerable<WCF.BussinessObject.EntityObject.DiaChiObject>
+
+
+@foreach (var item in Model)
+{
+    <div class="showText">
+        <h4>Địa chỉ:</h4>
+        <p>@item.Adress</p>
+        <h4>Số điện thoại: @item.Mobile</h4>
+        <h4>Hotline: @item.Hotline</h4>
+    </div>
+}
